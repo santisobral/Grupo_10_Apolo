@@ -13,7 +13,7 @@ www.opensports.com.ar (Pagina de producto)
 
 
 Integrantes:
-Martin Castro
+Martin Castro: Contador Publico
 Santiago Sobral: Cocinero Profesional.
 Nicolas Perazzolo
 Emiliano Canellada
