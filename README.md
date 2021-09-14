@@ -22,4 +22,4 @@ Integrantes:
 Martin Castro: Contador Publico
 Santiago Sobral: Cocinero Profesional.
 Nicolas Perazzolo
-Emiliano Canellada
+Emiliano Canellada: Empleado del rubro motores electricos.
