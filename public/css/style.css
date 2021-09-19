@@ -5,8 +5,14 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
+    padding-top: 193px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 /* HEADER*/
+.content{
+    position: fixed;/* aca fijo el header*/
+    top: 0;/* aca le digo al header que quede bien arriba*/
+    width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
+}
 .main-header-top{
     background-color:#25ced1;
     padding-top: 5px;
@@ -33,6 +39,10 @@ body{
 .main-header-top-bar{
     display: flex;
     justify-content: space-around
+}
+li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
+    background-color:#25ced1;
+    color: white;
 }
 .hamburger-button{
     display: block;
@@ -83,23 +93,7 @@ body{
 .title-section{
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* FOOTER*/
 .footer{
     background-color:#EA526F;
     padding-top: 10px;
@@ -183,6 +177,7 @@ body{
         display: flex; /* aca me pone las lista una al lado de la otra*/
         
     }
+   
     .main-navbar li {
         margin: 0 10px;
     }
