@@ -26,5 +26,5 @@ Producto:https://www.figma.com/file/5AEjxq7GwSrPhE7fK4MQI1/Proyecto-integrador-c
 Integrantes:
 Martin Castro: Contador Publico
 Santiago Sobral: Cocinero Profesional.
-Nicolas Perazzolo
+Nicolas Perazzolo : Licenciado en Administracion de Empresas.
 Emiliano Canellada: Empleado del rubro motores electricos.
