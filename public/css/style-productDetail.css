@@ -7,12 +7,14 @@ body{
     font-family: 'Roboto', sans-serif;
     padding-top: 178px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
+/*--------------------------------------------------------------------------*/
 /* HEADER*/
 @media (min-width: 320px){
 .header-content{
     position: fixed;/* aca fijo el header*/
     top: 0;/* aca le digo al header que quede bien arriba*/
     width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
+    z-index: 10;
 }
 .main-header-top{
     background-color:#25ced1;
@@ -89,6 +91,7 @@ body{
     margin-left: 0px;
 }
 
+
 @keyframes aumentar{
     0%{
         transform: scale(1);
@@ -112,6 +115,7 @@ body{
     padding: 5px 0;
 }
 }
+/*--------------------------------------------------------------------------*/
 /* FOOTER*/
 .footer{
     background-color:#EA526F;
@@ -212,7 +216,7 @@ body{
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
     } 
-
+}/*--------------------------------------------------------------------------*/
  /* FOOTER */
     .footer{
         background-color:#EA526F;
@@ -278,103 +282,124 @@ body{
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 25px;
 }
-}
+}/*--------------------------------------------------------------------------*/
 /*section*/
-}
-.img-botin-adidas{
-    padding-top: 37px;
-    padding-left: 10px;
-    width: 750px;
-    height: 600px;
+.imagen-principal{
+width: 100%;
 }
 
-.box{
-    display: flex;
-    padding-left: 150px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    
+.img-botin-adidas{
+width: 100%;
 }
+
+.box
+
+.box-box{
+    display: flex;
+    position: relative;
+    left: 19%;
+}
+
 .img-botines-chicos{
-   padding: 3px;
-   width: 150px;
-   height: 150px;
+    width: 24%;
+    position: relative;
+    left: -4%;
+    padding: 0.2%;
 }
 .logo-adidas{
-    width: 90px;
-    height: 90px;
-    padding-top: 33px;
-    padding-left: 5px;
-    padding-bottom: 2px;
-
+    padding-left: 1%;
+    padding-top: 3%;
+    width: 13%;
 }
-.hola{
-    display: flex;
-}
-.box-logo{
-    padding: auto;
-    width: 500px;
-    height: 90px;
-}
+.hola
+.box-logo
 .titulo-articulo{
-    width: 370px;
-    padding-top: 10px;
-    height: 100px;
-    font-size: x-large;
-    padding-left: 4px;
+    text-align: center;
+    text-decoration: underline;
     
 }
 .precio{
-    width: 100px;
-    padding-left: 4px;
-    padding-top: 10px;
+    padding-left: 2%;
+    padding-top: 4%;
     font-size: x-large;
 }
 
+.box-precio{
+    width: 50%;
+}
+
+.box-tarjeta{
+    width: 100%;
+}
+
+.tarjeta:hover{  /*Le puse subrayado al acerdacar el click*/
+    text-align: center;
+    padding-top: 1%;
+    text-decoration: underline;
+    color: #006bb4;
+}
+
 .tarjeta{
-    padding-left:4px;
-    padding-top: 20px;
+    color: #2cbf2e;
+    text-align: center;
+    padding-top: 1%;
+    text-decoration: none;
 }
 
 i.far.fa-credit-card{
-    padding-left: 5px;
+    padding-left: 2%;
 }
 
 .nombre-producto{
-    padding-top: 25px;
-    padding-left: 4px;
+    padding-top: 4%;
+    padding-left: 1.5%;
 }
 
 .descripcion-producto{
-    padding-left: 4px;
-    width: 400px;
-    font-size: 19px;
+    text-align: center;
 }
 
 .talle{
-    padding-top: 25px;
+    text-align: center;
+    padding-top: 2%;
+    text-decoration: underline;
 }
 
-.talle2{
-   padding-left: 10px;
-   width: 500px;
-   height: 500px;
+.talle2
+
+.box-box-lista{
+    padding: 2%
 }
 
-.s{
-    width: 65px;
-    height: 65px;
+.box-lista{
+    font-size: large;
+}
+
+.lista{
+    width: 14%;
+    height: 30px;
 }
 .comprar{
-    padding-top: 20px;
+    padding-left: 15%;
+    padding-bottom: 2%;
+    padding-top: 2%;
 }
 
 .comprar2{
-    border: solid 1px;
-    width: 215px;
-    height: auto;
-    padding-left: 4px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #00b600;
+    padding-left: 3%;
+    padding-bottom: 2%;
+    border-radius: 16px;
+    background-color:#25ced1;
+    color: black;
+    width: 77%;
 }
+
+.comprar2:hover{  /*AGREGAR AL CARRITO CON MOVIMIENTO*/
+    padding-left: 3%;
+    padding-bottom: 2%;
+    border-radius: 16px;
+    background-color:#25ced1;
+    color: white;
+    width: 77%;
+}
+
