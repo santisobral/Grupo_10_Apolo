@@ -5,28 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/98eaad93ae.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style-login.css">
 </head>
 <body>
-    <header>
-
-    </header>
+    <header class="header-content">
+        <div class="main-header-top">
+          <div class="truck">
+            <i class="fas fa-truck"></i>
+            <h2>Envios Gratis</h2>
+          </div>
+          <h2>Para Compras Mayores a $10000</h2>
+        </div>
+    
+        <div class="main-header">
+          <div class="main-header-top-bar">
+            <span><a class="inicio" href="#">ACCEDER</a></span>
+            <div>
+              <a href="#" class="hamburger-button">
+                <i class="fas fa-bars"></i>
+                <!--lo traigo de font awesome-->
+              </a>
+            </div>
+            <div class="apolo-logo">
+              <img src="/img/APOLO.png" class="logo">
+            </div>
+            <div class="box-3">
+              <form>
+                <div class="search-bar">
+                  <div class="barra">
+                    <input type="text" name="nombre" placeholder="Que estas buscando?" class="control">
+                  </div>
+                  <div>
+                    <i class="fas fa-search lupa"></i>
+                  </div>
+                </div>
+              </form>
+              <div class="main-buy">
+                <div>
+                  <i class="fas fa-cart-arrow-down carrito"></i>
+                </div>
+                <h3 class="buy">Mi Compra</h3>
+              </div>
+            </div>
+          </div>
+    
+    
+          <nav class="main-navbar">
+            <!--aca en esta fila genero una barra de vavegacion-->
+            <ul class="navbar">
+              <li><a href="#">HOMBRES</a></li>
+              <li><a href="#">MUJERES</a></li>
+              <li><a href="#">NUEVA TEMPORADA</a></li>
+              <li><a href="#">MARCAS</a></li>
+              <li><a href="#"> SUPER OFERTAS</a></li>
+            </ul>
+    
+          </nav>
+        </div>
+    
+      </header>
     <main>
         <section class="box-form">
             <h1 class="title-login">Iniciar sesión</h1>
             <form action="/login" method="POST" class="form-login">
                 <div class="usuario">
-                    <input type="text" name="usuario" id="usuario" value="Usuario" required>
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" id="usuario"  required>
                 </div>
                 <div class="pass">
-                    <input type="password" name="password" id="password" value="Contraseña" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password"  required>
                 </div>
                 <div class="remember">
-                    <label>
-                        <input type="checkbox" name="rememberMe">Recordar sesión
-                    </label>
+                        <input type="checkbox" name="rememberMe">
+                        <label for="rememberMe">Recordar sesión</label>
                 </div>
                 <button type="submit" class="boton">Iniciar sesión</button>
             </form>
@@ -35,7 +92,37 @@
         </section>
     </main>
     <footer>
-
-    </footer>
+        <div class="footer">
+          <div class="piedepagina">
+            <section class="footer-top ">
+              <h3 class="footer-h3">LOCALES MAS CERCANOS</h3>
+              <h3>REGISTRATE PARA RECIBIR NOVEDADES</h3>
+            </section>
+    
+            <section class="footer-botton">
+              <h3>ACERCA DE APOLO</h3>
+            </section>
+          </div>
+          <div class="all-icons">
+            <i class="fab fa-facebook icons"></i>
+            <i class="fab fa-twitter icons "></i>
+            <i class="fab fa-youtube icons"></i>
+            <i class="fab fa-instagram icons"></i>
+          </div>
+          <section class="privacity">
+            <div>
+              <span class="bloque">Argentina</span>
+              <!--aca estoy transformando en elemento de bloques los span, porque si no me quedaba uno al lado del otro-->
+              <span class="bloque">2021 Apolo, Inc. Todos los derechos reservados</span>
+            </div>
+            <div>
+              <span class="bloque">Terminos de uso</span>
+              <!--antes habia un parrafo y me lo tomaba como un bloque y no me dejaba que se posicione uno al lado de otro-->
+              <span class="bloque">Politica de Privacidad</span>
+            </div>
+          </section>
+        </div>
+    
+      </footer>
 </body>
 </html>

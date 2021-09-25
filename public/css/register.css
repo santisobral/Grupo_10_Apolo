@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box; 
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.box-form-register {
+    width: 100%;
+    background-color:#25CED1 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center ;
+    height: 300px;
+}
+
+.form-register input{
+    border-radius: 5px;
+    color: gray;
+    border: none;
+    line-height: 1.25;
+}
+
+
+
+.form-birth label {
+    display: block;
+    color: linen;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+
+.register-button {
+    background-color: coral;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 25px;
+    color: linen;
+    font-weight: 400;
+}
+
+.box-benefits {
+width: 100%;
+padding: 20px 30px;
+background-color: coral;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.header-benefits {
+margin-bottom: 10px;
+color: linen;
+text-shadow: 1px 1px 2px gray;
+}
+
+.list-benefits {
+margin-left: 30px;
+list-style-type: circle;
+color: linen;
+}

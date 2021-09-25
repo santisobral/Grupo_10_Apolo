@@ -10,6 +10,126 @@
     padding: 0px;
 }
 
+/* Header */
+
+.header-content{
+    position: fixed;/* aca fijo el header*/
+    top: 0;/* aca le digo al header que quede bien arriba*/
+    width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
+    z-index: 1;/* es para que el header se posicione por adelante de los demas elementos y se visualice al scroolear*/
+}
+.slider{
+    display: flex;/* me acomoda cada imagen del slider en forma horizontal*/
+}
+.slider-img{ /* aca estoy defiendo el alto y ancho del contenedor del slider para que las imagenes tengan el mismo tamaño*/
+   width: 200px;
+   height: 300px;
+}
+.slider-img img{ /* aca las img tomen el 100% del tamaño de su contenedor*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-header-top{
+    background-color:#25ced1;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.main-header-top h2{
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-left: 10px;   
+}
+.inicio{
+    display: none;
+}
+.truck{
+    font-size: 15px;
+    padding-bottom: 3px;
+    width: 100%;
+    color: green;
+    display: flex;
+    justify-content: center;
+}
+.main-header{
+    background-color: #EA526F;
+}
+.main-header-top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+.box-3{
+    display: flex;
+}
+.search-bar{
+    display: flex;
+}
+.buy{
+    display: none;
+}
+.logo{
+    width: 140px;
+    animation: aumentar 1s linear 5 alternate;
+}
+.lupa{
+    display: block;
+    color: #25ced1;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.carrito{
+    color:#25ced1;
+    font-size: 25px;
+    margin-right: 10px;  
+}
+.navbar li a{
+    transition: all 450ms; /* de esta forma al dar click sobre la barra de navegacion el cambio no se refleja de forma abrupta*/
+
+}
+.navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
+    background-color:#25ced1;
+    color: white;
+    border-radius: 50%;
+    opacity: 1;
+}
+.hamburger-button{
+    display: block;
+    font-size: 30px;
+    color: #25ced1;
+    margin-left: 0px;
+}
+
+@keyframes aumentar{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+.main-navbar{
+    display: none
+}
+.main-navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-navbar a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+}
+
+/* Main */
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -19,6 +139,10 @@ body {
     color:linen ;
 }
 
+main{
+    position: relative;
+    top: 178px;
+}
 .box-form {
     width: 100%;
     background-color:#25CED1 ;
@@ -26,20 +150,40 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column; 
+    
 }
 
 .form-login {
     border: solid red 1px;
     display: flex;
     flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
 }
 
 .usuario {
     border: solid red 1px;
 }
 
+.usuario label {
+    display: block;
+    color: linen;
+    margin-bottom: 5px;
+}
+
 .pass {
     border: solid red 1px;
+}
+
+.pass label {
+    display: block;
+    color: linen;
+    margin-bottom: 5px;
 }
 
 .remember {
@@ -49,6 +193,8 @@ body {
 
 .boton {
     border: solid red 1px;
+    border-radius: 5px;
+    line-height: 1.5;
 }
 
 .forgot-pass {
@@ -59,11 +205,60 @@ body {
 .forgot-pass a{
     color: linen;
     font-size: 14px;
+    font-weight: 400;
 }
 .register {
     border: solid red 1px;
+    border-radius: 5px;
+    background-color: coral;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .register a {
     color: linen;
+    text-decoration: none;
 }
 
+/* footer*/
+
+.footer{
+    background-color:#EA526F;
+    padding-top: 10px;
+    position: relative;
+    top: 180px;
+}
+.footer h3 {
+    font-size: 15px;
+    color:white;
+    padding-left: 10px;
+}
+.footer-botton{
+    border-top:  solid 0.5px whitesmoke;
+    display: block; /* si no le pongo este display block no me toma el border-top*/
+    margin-top: 15px;
+}
+.privacity{
+    color: white;
+    font-size: 15px;
+
+    padding-left: 10px;
+}
+.all-icons{
+    margin-top: 15px ;
+}
+.icons{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.bloque{
+    display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
+}
+.barra{
+    display: none;
+}
+.buy{
+    display: none;
+}
