@@ -7,6 +7,17 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+img {
+    width: 50%;
+}
+
+header {
+background-color: #EA526F;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 .box-form-register {
     width: 100%;
