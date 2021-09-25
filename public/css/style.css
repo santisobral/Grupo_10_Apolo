@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 178px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    padding-top: 180px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 /* HEADER*/
 @media (min-width: 320px){
@@ -13,6 +13,19 @@ body{
     position: fixed;/* aca fijo el header*/
     top: 0;/* aca le digo al header que quede bien arriba*/
     width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
+    z-index: 1;/* es para que el header se posicione por adelante de los demas elementos y se visualice al scroolear*/
+}
+.slider{
+    display: flex;/* me acomoda cada imagen del slider en forma horizontal*/
+}
+.slider-img{ /* aca estoy defiendo el alto y ancho del contenedor del slider para que las imagenes tengan el mismo tamaño*/
+   width: 200px;
+   height: 300px;
+}
+.slider-img img{ /* aca las img tomen el 100% del tamaño de su contenedor*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .main-header-top{
     background-color:#25ced1;
@@ -112,6 +125,15 @@ body{
     padding: 5px 0;
 }
 /*MAIN*/
+.version-tablet{
+    display: none;
+}
+.precio{
+    color: #25ced1;
+}
+.descuento{
+    color: #25ced1;
+}
 .img-section{
     width:100%;
 }
@@ -156,6 +178,7 @@ body{
     display: none;
 }
 }
+
 @media(min-width:768px) {
     .main-header-top{
         display: flex;
@@ -194,7 +217,8 @@ body{
     }
     .buy{
         display: block;
-        margin-right: 10px;   
+        margin-right: 10px;  
+        color: white; 
     }
     .hamburger-button{
         display: none;
@@ -222,11 +246,16 @@ body{
     /* seccion ropa*/
     .tablet{
         display: flex;
-        justify-content: center;   
-        
+        justify-content: center;    
     }
+    .slider-img{
+        width: 400px;
+        height: 300px;
+     }
    
-    
+    .version-tablet{
+        display: block;
+    }
     .img-1{
         margin-right: 5px;
 

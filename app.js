@@ -7,7 +7,7 @@ const path = require("path");
 const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta public definida que la voy a usar para acceder a los recursos estaticos dentro de public
 app.use(express.static(publicPath))
 
-
+app.use('/js', express.static(__dirname + '/public/js'));
 app.listen(3030, () => {
     console.log("Servidor Corriendo en el puerto http://localhost:3030/")
 });
