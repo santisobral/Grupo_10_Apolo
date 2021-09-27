@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 178px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    padding-top: 94px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 /*--------------------------------------------------------------------------*/
 /* HEADER*/
@@ -400,6 +400,7 @@ i.far.fa-credit-card{
 
 .botom { /*boton de carrito*/
     text-align: center;
+    padding-bottom: 5px;
 }
 
 @media(min-width:768px){
@@ -440,4 +441,8 @@ i.far.fa-credit-card{
 }
 
     
+}
+
+.hola2{
+    display: flex;
 }
