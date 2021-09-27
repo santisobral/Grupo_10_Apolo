@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 180px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    padding-top: 130px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 /* HEADER*/
 @media (min-width: 320px){
@@ -19,7 +19,7 @@ body{
     display: flex;/* me acomoda cada imagen del slider en forma horizontal*/
 }
 .slider-img{ /* aca estoy defiendo el alto y ancho del contenedor del slider para que las imagenes tengan el mismo tamaño*/
-   width: 300px;
+   width: 380px;
    height: 300px;
 }
 .slider-img img{ /* aca las img tomen el 100% del tamaño de su contenedor*/
@@ -66,6 +66,10 @@ body{
 }
 .search-bar{
     display: flex;
+}
+.search-bar-bar{
+    display: none;
+   
 }
 .buy{
     display: none;
@@ -171,8 +175,18 @@ body{
 .bloque{
     display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
 }
-.barra{
+.sear-bar-bar{
     display: none;
+}
+.botton-form-login {
+    background-color:#25ced1;
+    border: none;
+    padding: 5px 10px;
+    font-style: oblique;
+    color: #FFFF;
+    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 5px;
 }
 .buy{
     display: none;
@@ -206,8 +220,12 @@ body{
     .lupa{
         font-size: 20px;
     }
+    .search-bar-bar{
+        display: block;
+        min-width: 200px;
+    }
     .barra{
-             display: block; /* hago que se mustre la barra que la habia ocultado con display:none*/   
+        display: flex;
     }
     .control{
         text-align: center;
