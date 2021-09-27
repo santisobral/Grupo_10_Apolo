@@ -285,34 +285,44 @@ body{
 }/*--------------------------------------------------------------------------*/
 /*section*/
 .imagen-principal{
-width: 100%;
+width: 97%;
 }
 
 .img-botin-adidas{
 width: 100%;
+padding-left: 1%;
 }
-
-.box
-
 .box-box{
     display: flex;
     position: relative;
-    left: 19%;
+    left: 1%;
+    padding-top: 0%;
 }
 
 .img-botines-chicos{
-    width: 24%;
+    width: 26%;
     position: relative;
-    left: -4%;
-    padding: 0.2%;
+    left: 10%;
+    padding-left: 1.2%;
+    padding-top: 0%;
+    border: none;
+    padding-right: 1.2%;
+}
+
+.img-botines-chicos:hover{
+    width: 26%;
+    position: relative;
+    left: 10%;
+    padding-left: 1.2%;
+    padding-top: 0%;
+    border: solid #EA526F 1px;
+    padding-right: 1.2%;
 }
 .logo-adidas{
     padding-left: 1%;
     padding-top: 3%;
     width: 13%;
 }
-.hola
-.box-logo
 .titulo-articulo{
     text-align: center;
     text-decoration: underline;
@@ -364,9 +374,6 @@ i.far.fa-credit-card{
     padding-top: 2%;
     text-decoration: underline;
 }
-
-.talle2
-
 .box-box-lista{
     padding: 2%
 }
@@ -379,27 +386,58 @@ i.far.fa-credit-card{
     width: 14%;
     height: 30px;
 }
-.comprar{
-    padding-left: 15%;
-    padding-bottom: 2%;
-    padding-top: 2%;
+
+
+#product-addtocart-button { /*boton de carrito*/
+    background-color: #009946;
+    color: #fff;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border-color: #009946;
+    padding: 14px 30px;
+
 }
 
-.comprar2{
-    padding-left: 3%;
-    padding-bottom: 2%;
-    border-radius: 16px;
-    background-color:#25ced1;
-    color: black;
-    width: 77%;
+.botom { /*boton de carrito*/
+    text-align: center;
 }
 
-.comprar2:hover{  /*AGREGAR AL CARRITO CON MOVIMIENTO*/
-    padding-left: 3%;
-    padding-bottom: 2%;
-    border-radius: 16px;
-    background-color:#25ced1;
-    color: white;
-    width: 77%;
+@media(min-width:768px){
+.hola{
+    display: flex;
+    float: right;
+}
+.imagen-botin-adidas .logo-adidas {
+    display: flex;
 }
 
+.titulos {
+    text-align: center;
+    padding-top: 21px;
+    width: 99%;
+}
+
+.img-botin-adidas {
+    width: 50%;
+    padding-left: 1%;
+}
+
+.box-box {
+    display: flex;
+    position: relative;
+    left: 1%;
+    width: 50%;
+}
+
+#product-addtocart-button { /*boton de carrito*/
+    background-color: #009946;
+    color: #fff;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border-color: #009946;
+    padding: 14px 30px;
+    margin: 1%;
+}
+
+    
+}
