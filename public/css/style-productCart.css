@@ -333,6 +333,7 @@ body{
     .second-section-tablet{
         display: flex;
         flex-direction: column;
+        margin-right: 15px;
     }
     
     .second-section-1{  
