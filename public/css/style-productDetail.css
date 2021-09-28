@@ -114,7 +114,27 @@ body{
     color: black;
     padding: 5px 0;
 }
+.lista{
+    
+        width: 24%;
+        height: 30px;
+    }
+    .botton-form-login {
+        background-color: #25ced1;
+        border: none;
+        padding: 5px 10px;
+        font-style: oblique;
+        color: #FFFF;
+        border-radius: 5px;
+        width: 50%;
+        margin-bottom: 5px;
+    }
+    .search-bar-bar{
+        display: none;
+    }
 }
+
+
 /*--------------------------------------------------------------------------*/
 /* FOOTER*/
 .footer{
@@ -147,12 +167,11 @@ body{
 .bloque{
     display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
 }
-.barra{
-    display: none;
-}
+
 .buy{
     display: none;
 }
+
 @media(min-width:768px) {
     .main-header-top{
         display: flex;
@@ -182,7 +201,7 @@ body{
         font-size: 20px;
     }
     .barra{
-             display: block; /* hago que se mustre la barra que la habia ocultado con display:none*/   
+             display: flex; /* hago que se mustre la barra que la habia ocultado con display:none*/   
     }
     .control{
         text-align: center;
@@ -214,6 +233,10 @@ body{
     .main-navbar li {
         margin: 0 10px;
     }
+    .search-bar-bar {
+        display: block;
+        min-width: 200px;
+    }
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
     } 
@@ -222,8 +245,6 @@ body{
         bottom: 0px;
         width: 100% /*el position absolute no deja que el footer tomo todo el ancho por eso le doy el 100%*/;
     }
-}/*--------------------------------------------------------------------------*/
- /* FOOTER */
     .footer{
         background-color:#EA526F;
         padding-top: 20px;
@@ -236,43 +257,53 @@ body{
         flex-direction: column;
         
     }
-   
-    .footer-botton{
-        display: flex;
-        flex-direction: column;
-        border: none;
-    }
-    
-    .footer-botton h3{
-        color: white;
-        margin:0;
-        font-size: 15px;
-        
-    }
-    .footer-top h3{
-        margin: 0 10px;
-        font-size: 15px;
-        color: white;
-    }
-    .privacity {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 10px;
-    }
-    .privacity span{
-        margin: 0 10px; /* separo los p*/
-    }
-    .bloque{
-        display: inline;/* me lo convierte de bloque a linea*/
-    }
     .all-icons{
         margin: 5px 20px;
         display: flex;
         justify-content: end; /* aca llevo los iconos como faceebook,twiter al final a la derecha*/
 }
-   .icons{
-    margin:0 10px
+.privacity {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
 }
+  
+.footer-botton{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.footer-botton h3{
+    color: white;
+    margin:0;
+    font-size: 15px;
+    
+}
+.footer-top h3{
+    margin: 0 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.privacity span{
+    margin: 0 10px; /* separo los p*/
+}
+.bloque{
+    display: inline;/* me lo convierte de bloque a linea*/
+}
+
+.icons{
+margin:0 10px
+}
+.lista{
+    width: 35%;
+    height: 30px;
+}
+}/*--------------------------------------------------------------------------*/
+ /* FOOTER */
+   
+ 
 
 @media(min-width:1024px) {
     .lupa{
@@ -326,7 +357,7 @@ padding-left: 1%;
     padding-right: 1.2%;
 }
 .logo-adidas{
-    padding-top: 27px;
+    padding-top: 40px;
     width: 11%;
     padding-bottom: 2px;
     padding-left: 5px;
@@ -392,10 +423,7 @@ i.far.fa-credit-card{
     font-size: large;
 }
 
-.lista{
-    width: 14%;
-    height: 30px;
-}
+
 
 
 #product-addtocart-button { /*boton de carrito*/
@@ -417,7 +445,7 @@ i.far.fa-credit-card{
     .section-main{
         display: flex;
         justify-content: space-between;
-        border: solid 1px red;
+       
     }
     .conteiner-img{
         display: flex;
@@ -429,7 +457,7 @@ i.far.fa-credit-card{
     display: flex;
 }
 .hola{
-   border: solid 1px green;
+  
    display: flex;
 }
 .imagen-botin-adidas .logo-adidas {
@@ -479,5 +507,9 @@ i.far.fa-credit-card{
     }
     .detalle-producto{
         font-size: 20px;
+    }
+    .lista{
+        width: 40%;
+        height: 30px;
     }
 }
