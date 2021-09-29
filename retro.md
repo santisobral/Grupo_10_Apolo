@@ -1,6 +1,6 @@
 Conclusiones sobre el primer Sprint:
 Continuar haciendo: 
-1 Nos juntamos los dias que habiamos
+1 Nos juntamos los dias que habiamos acordado
 2 Buena participacion de todos los integrantes del grupo
 Hacer mas:
 1 Reuniones cortas para saber en que estado estan las actividades que vamos realizando.

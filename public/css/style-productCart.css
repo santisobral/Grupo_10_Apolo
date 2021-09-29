@@ -146,6 +146,7 @@ body{
 .second-section{
     display: flex;
     height: 138px;
+    margin-bottom: 5px;
 }
 .description-botin{
     display: flex;
@@ -160,6 +161,7 @@ body{
 .third-section{
     display: flex;
     background-color:#C8C6D7;
+    margin-top: 5px;
   
 }
 .subtotal{
@@ -298,7 +300,7 @@ body{
    
     .main-navbar{
         display: block; /* me trar la barra de navegacion que la habia ocultado mas arriba*/
-        background-color: #C8C6D7;
+        background-color: #FCEADE;
         margin-bottom: 10px;
         display: flex;
         justify-content: space-evenly;/* aca me separa las listas pero me queda una bien a la izquierda y la otra a la derecha pero de arriba*/
@@ -308,6 +310,8 @@ body{
     }
     .main-navbar ul {
         display: flex; /* aca me pone las lista una al lado de la otra*/   
+        justify-content: space-around;
+        width: 100%;
     }
     .main-navbar li {
         margin: 0 10px;

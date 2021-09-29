@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 110px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    padding-top: 90px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 /* HEADER*/
 @media (min-width: 320px){
@@ -96,7 +96,7 @@ body{
 .navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
     background-color:#25ced1;
     color: white;
-    border-radius: 50%;
+   
     opacity: 1;
 }
 .hamburger-button{
@@ -194,6 +194,10 @@ body{
 }
 
 @media(min-width:768px) {
+    body{
+        font-family: 'Roboto', sans-serif;
+        padding-top: 140px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    }
     .main-header-top{
         display: flex;
         justify-content: center ;
@@ -244,16 +248,19 @@ body{
    
     .main-navbar{
         display: block; /* me trar la barra de navegacion que la habia ocultado mas arriba*/
-        background-color: #C8C6D7;
+        background-color: #FCEADE;
         margin-bottom: 10px;
         display: flex;
-        justify-content: space-evenly;/* aca me separa las listas pero me queda una bien a la izquierda y la otra a la derecha pero de arriba*/
+        padding: 4px;
+        
     }
     .main-navbar a{
         text-decoration: none; /* le saco el subrrayado a los enlaces*/
     }
     .main-navbar ul {
         display: flex; /* aca me pone las lista una al lado de la otra*/   
+        width: 100%;
+        justify-content: space-around;
     }
     .main-navbar li {
         margin: 0 10px;
