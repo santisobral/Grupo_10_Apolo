@@ -121,6 +121,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
 }
 
 .title-login {
@@ -128,7 +129,9 @@ body {
     margin: 10px;
 }
 
-
+main {
+    height: 75%;
+}
 
 .box-form {
     width: 100%;
@@ -138,6 +141,7 @@ body {
     align-items: center;
     flex-direction: column; 
     padding: 10px 0px;
+    height: 100%;
 }
 
 .form-login {
