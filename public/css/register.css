@@ -127,6 +127,9 @@ justify-content: center;
 align-items: center;
 }
 
+/* main */
+
+
 .box-form-register {
     width: 100%;
     background-color:#25CED1 ;
@@ -174,6 +177,11 @@ align-items: center;
     font-size: 25px;
     color: linen;
     font-weight: 400;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: rgb(245, 118, 71);
 }
 
 .box-benefits {
@@ -294,7 +302,6 @@ font-size: 16px;
     .main-navbar{
         display: block; /* me trar la barra de navegacion que la habia ocultado mas arriba*/
         background-color: #FCEADE;
-        margin-bottom: 10px;
         display: flex;
         padding: 4px;
         
@@ -370,10 +377,12 @@ font-size: 16px;
       justify-content: space-between;
   }
   .box-form-register {
-margin: 50px;
+    margin: 50px;
+    border-radius: 10px;
   }
   .box-benefits{
-margin: 50px;
+    margin: 50px;
+    border-radius: 10px;
   }
 
   .header-benefits {

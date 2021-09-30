@@ -13,7 +13,7 @@
 /* Header */
 
 .header-content{
-    position: fixed;/* aca fijo el header*/
+    position: sticky;/* aca fijo el header*/
     top: 0;/* aca le digo al header que quede bien arriba*/
     width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
     z-index: 1;/* es para que el header se posicione por adelante de los demas elementos y se visualice al scroolear*/
@@ -125,12 +125,11 @@ body {
 
 .title-login {
     color:linen ;
+    margin: 10px;
 }
 
-main{
-    position: relative;
-    top: 178px;
-}
+
+
 .box-form {
     width: 100%;
     background-color:#25CED1 ;
@@ -138,7 +137,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    
+    padding: 10px 0px;
 }
 
 .form-login {
@@ -175,6 +174,11 @@ input {
 .boton {
     border-radius: 5px;
     line-height: 1.5;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #e4e3e3;
 }
 
 .forgot-pass a{
@@ -190,7 +194,12 @@ input {
     font-weight: 400;
     margin-top: 10px;
     margin-bottom: 10px;
+} 
+.register:hover {
+    background-color: rgb(245, 118, 71);
+    box-shadow: 1px 1px 2px #888888;
 }
+
 .register a {
     color: linen;
     text-decoration: none;
@@ -201,8 +210,6 @@ input {
 .footer{
     background-color:#EA526F;
     padding-top: 10px;
-    position: relative;
-    top: 180px;
 }
 .footer h3 {
     font-size: 15px;
@@ -293,7 +300,6 @@ input {
     .main-navbar{
         display: block; /* me trar la barra de navegacion que la habia ocultado mas arriba*/
         background-color: #FCEADE;
-        margin-bottom: 10px;
         display: flex;
         justify-content: space-evenly;/* aca me separa las listas pero me queda una bien a la izquierda y la otra a la derecha pero de arriba*/
     }
