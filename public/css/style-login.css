@@ -93,10 +93,7 @@
 
 }
 .navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
-    background-color:#25ced1;
-    color: white;
-    border-radius: 50%;
-    opacity: 1;
+    color: #25ced1;
 }
 .hamburger-button{
     display: block;
@@ -105,22 +102,14 @@
     margin-left: 0px;
 }
 
-@keyframes aumentar{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.5);
-    }
-}
-
 .main-navbar{
     display: none
 }
 .main-navbar ul{
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    width: 100%;
 }
 .main-navbar a{
     text-decoration: none;
@@ -135,7 +124,6 @@ body {
 }
 
 .title-login {
-    border: solid red 1px;
     color:linen ;
 }
 
@@ -154,7 +142,6 @@ main{
 }
 
 .form-login {
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
     height: 150px;
@@ -166,9 +153,7 @@ input {
     border: none;
 }
 
-.usuario {
-    border: solid red 1px;
-}
+
 
 .usuario label {
     display: block;
@@ -176,9 +161,6 @@ input {
     margin-bottom: 5px;
 }
 
-.pass {
-    border: solid red 1px;
-}
 
 .pass label {
     display: block;
@@ -187,28 +169,20 @@ input {
 }
 
 .remember {
-    border: solid red 1px;
     color: linen;
 }
 
 .boton {
-    border: solid red 1px;
     border-radius: 5px;
     line-height: 1.5;
 }
 
-.forgot-pass {
-    border: solid red 1px;
-    
-    
-}
 .forgot-pass a{
     color: linen;
     font-size: 14px;
     font-weight: 400;
 }
 .register {
-    border: solid red 1px;
     border-radius: 5px;
     background-color: coral;
     padding: 5px;
@@ -264,13 +238,141 @@ input {
 }
 
 @media (min-width:361px) {
-
-}
-
-@media (min-width: 769px) {
-
-}
-
-@media (min-width: 1200px) {
     
+}
+
+@media(min-width:768px) {
+    .main-header-top{
+        display: flex;
+        justify-content: center ;
+    }
+    .main-header-top h2{
+        font-size: 15px;
+    } 
+    .box-3{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 60px;
+    }
+    .inicio{
+        text-decoration: none;/* le saco el subrrayado al enlace*/
+        color:white;
+        display: block; /* con este display hago que aparezca el inicio*/
+        margin-left: 20px;
+    }
+    .apolo-logo{
+        display: flex;
+        justify-content: center;
+    }
+    .lupa{
+        font-size: 20px;
+    }
+    .search-bar-bar{
+        display: block;
+        min-width: 200px;
+    }
+    .barra{
+        display: flex;
+    }
+    .control{
+        text-align: center;
+    }
+    .main-buy{
+      display: flex;  
+    }
+    .buy{
+        display: block;
+        margin-right: 10px;  
+        color: white; 
+    }
+    .hamburger-button{
+        display: none;
+    }  
+   
+    .main-navbar{
+        display: block; /* me trar la barra de navegacion que la habia ocultado mas arriba*/
+        background-color: #FCEADE;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-evenly;/* aca me separa las listas pero me queda una bien a la izquierda y la otra a la derecha pero de arriba*/
+    }
+    .main-navbar a{
+        text-decoration: none; /* le saco el subrrayado a los enlaces*/
+    }
+    .main-navbar ul {
+        display: flex; /* aca me pone las lista una al lado de la otra*/  
+        justify-content: space-around; 
+    }
+    .main-navbar li {
+        margin: 0 10px;
+    }
+    .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
+        font-size: 15px;
+    } 
+
+    /* footer*/
+
+    .footer{
+        background-color:#EA526F;
+        padding-top: 20px;
+    }
+    .piedepagina{
+        display: flex;
+    }
+    .footer-top{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .footer-botton{
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+    
+    .footer-botton h3{
+        color: white;
+        margin:0;
+        font-size: 15px;
+        
+    }
+    .footer-top h3{
+        margin: 0 10px;
+        font-size: 15px;
+        color: white;
+    }
+    .privacity {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+    .privacity span{
+        margin: 0 10px; /* separo los p*/
+    }
+    .bloque{
+        display: inline;/* me lo convierte de bloque a linea*/
+    }
+    .all-icons{
+        margin: 5px 20px;
+        display: flex;
+        justify-content: end; /* aca llevo los iconos como faceebook,twiter al final a la derecha*/
+}
+   .icons{
+    margin:0 10px
+    }
+}
+
+@media(min-width:1024px) {
+    .lupa{
+        display: block;  
+        font-size: 20px;
+    }
+    .barra{
+        font-size: 20px;
+    }
+    .main-header-top h2{
+        font-size: 15px;
+    }
+   
 }

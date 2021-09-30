@@ -13,11 +13,58 @@
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <header>
-        <div class="img-logo">
-        <img src="/img/logo_small-pelota.png" alt="">
+    <header class="header-content">
+        <div class="main-header-top">
+          <div class="truck">
+            <i class="fas fa-truck"></i>
+            <h2>Envios Gratis</h2>
+          </div>
+          <h2>Para Compras Mayores a $10000</h2>
         </div>
-    </header>
+    
+        <div class="main-header">
+          <div class="main-header-top-bar">
+            <span><a class="inicio" href="#">ACCEDER</a></span>
+            <div>
+              <a href="#" class="hamburger-button">
+                <i class="fas fa-bars"></i>
+                <!--lo traigo de font awesome-->
+              </a>
+            </div>
+            <div class="apolo-logo">
+              <img src="/img/logo_small-pelota.png" class="logo">
+            </div>
+            <div class="box-3">
+              <form>
+                <div class="barra">
+                  <input type="text" nombre="search-bar" placeholder="Que estas buscando?" class="search-bar-bar">
+                  <button type="submit" class="botton-form-login"><i class="fas fa-search"></i></button>
+                </div>
+              </form>
+              <div class="main-buy">
+                <div>
+                  <i class="fas fa-cart-arrow-down carrito"></i>
+                </div>
+                <h3 class="buy">Mi Compra</h3>
+              </div>
+            </div>
+          </div>
+    
+    
+          <nav class="main-navbar">
+            <!--aca en esta fila genero una barra de vavegacion-->
+            <ul class="navbar">
+              <li><a href="#">HOMBRES</a></li>
+              <li><a href="#">MUJERES</a></li>
+              <li><a href="#">NUEVA TEMPORADA</a></li>
+              <li><a href="#">MARCAS</a></li>
+              <li><a href="#"> SUPER OFERTAS</a></li>
+            </ul>
+    
+          </nav>
+        </div>
+    
+      </header>
     <main>
         <section class="box-form-register">
             <form action="/regiser" method="POST" class="form-register">
@@ -50,6 +97,38 @@
             </ul>
         </section>
     </main>
+    <footer>
+        <div class="footer">
+          <div class="piedepagina">
+            <section class="footer-top ">
+              <h3 class="footer-h3">LOCALES MAS CERCANOS</h3>
+              <h3>REGISTRATE PARA RECIBIR NOVEDADES</h3>
+            </section>
     
+            <section class="footer-botton">
+              <h3>ACERCA DE APOLO</h3>
+            </section>
+          </div>
+          <div class="all-icons">
+            <i class="fab fa-facebook icons"></i>
+            <i class="fab fa-twitter icons "></i>
+            <i class="fab fa-youtube icons"></i>
+            <i class="fab fa-instagram icons"></i>
+          </div>
+          <section class="privacity">
+            <div>
+              <span class="bloque">Argentina</span>
+              <!--aca estoy transformando en elemento de bloques los span, porque si no me quedaba uno al lado del otro-->
+              <span class="bloque">2021 Apolo, Inc. Todos los derechos reservados</span>
+            </div>
+            <div>
+              <span class="bloque">Terminos de uso</span>
+              <!--antes habia un parrafo y me lo tomaba como un bloque y no me dejaba que se posicione uno al lado de otro-->
+              <span class="bloque">Politica de Privacidad</span>
+            </div>
+          </section>
+        </div>
+    
+      </footer>
 </body>
 </html>
