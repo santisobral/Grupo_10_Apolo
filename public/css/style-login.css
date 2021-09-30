@@ -145,6 +145,8 @@ body {
     flex-direction: column;
     height: 150px;
     justify-content: space-between;
+    width: 85%;
+    max-width: 425px;
 }
 
 input {
@@ -152,6 +154,13 @@ input {
     border: none;
 }
 
+.usuario input{
+    width: 100%;
+}
+
+.pass input {
+    width: 100%;
+}
 
 
 .usuario label {
