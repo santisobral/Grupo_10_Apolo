@@ -458,7 +458,7 @@ i.far.fa-credit-card{
     .conteiner-img{
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 700px; /* aca le doy un ancho fijo al contenedor*/
     }
     
 .imagen-botin{
@@ -519,5 +519,15 @@ i.far.fa-credit-card{
     .lista{
         width: 40%;
         height: 30px;
+    }
+    .conteiner-img{
+        
+        width: 750px; /* aca le doy un ancho fijo al contenedor*/
+    }
+    .hola2{
+        width: 500px;
+    }
+    .footer{
+        position: relative;/* aca le saco el position fixed*/
     }
 }
