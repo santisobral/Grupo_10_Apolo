@@ -48,6 +48,15 @@
 .inicio{
     display: none;
 }
+.botton-form-login {
+    background-color:#25ced1;
+    border: none;
+    padding: 5px 10px;
+    font-style: oblique;
+    color: #FFFF;
+    border-radius: 5px;
+    margin-right: 5px;
+}
 .truck{
     font-size: 15px;
     padding-bottom: 3px;
@@ -250,12 +259,10 @@ input {
 .bloque{
     display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
 }
-.barra{
+.search-bar-bar{
     display: none;
 }
-.buy{
-    display: none;
-}
+
 
 @media (min-width:361px) {
     
@@ -271,9 +278,7 @@ input {
     } 
     .box-3{
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        height: 60px;
     }
     .inicio{
         text-decoration: none;/* le saco el subrrayado al enlace*/
@@ -290,7 +295,8 @@ input {
     }
     .search-bar-bar{
         display: block;
-        min-width: 200px;
+        border-radius: 5px;
+        text-align: center;
     }
     .barra{
         display: flex;
@@ -300,6 +306,7 @@ input {
     }
     .main-buy{
       display: flex;  
+      margin-left: 5px;
     }
     .buy{
         display: block;

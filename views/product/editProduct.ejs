@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apolo</title>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/98eaad93ae.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/lightslider.css"> <!--es para hacer el slider-->
+        <link rel="stylesheet" href="/css/style-editProduct.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script> <!--es para hacer el slider-->
+        <script type="text/javascript" src="js/lightslider.js"></script> <!--es para hacer el slider-->
+      </head>
+<body>
+    <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+
+    <form action="/crear-producto" method="POST" class="create-form">
+        <div class="control-formulario">
+         <label>Nombre del Producto</label>
+         <input type="text" name="nombre" placeholder="nombre producto" class="control"> <!--el atibuto name es de para una mejor identificacion del Backend-->
+        </div>
+        <div class="control-formulario">
+          <label>Precio</label>
+          <input type="text" name="precio" class="control">
+         </div>
+           <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
+             <label>Categoria</label> 
+              <select name="Remeras" class="control"> <!--el name es solo para el Backend-->
+               <option value="Short">Hogar</option> <!--el value es para q el backend identifique de que se trata-->
+               <option value="Medias">Electro</option>
+               <option value="Botines">Indumentaria</option>
+               <option value="Guantes">Indumentaria</option>
+               <option value="Pelotas">Indumentaria</option>
+               <option value="Botines">Indumentaria</option>
+              </select>
+           </div>
+           <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
+            <label>Cuidades</label> 
+             <select name="Cuidades" class="control"> <!--el name es solo para el Backend-->
+              <option value="Baires">Buenos Aires</option> <!--el value es para el backend-->
+              <option value="Cor">Cordoba</option>
+              <option value="mdza">Mendoza</option>
+             </select>
+          </div>
+          <div class="control-formulario">
+            <label>Descripcion</label> <!--aca van los comentarios-->
+            <textarea name="descripcion" class="control"></textarea>
+          </div>
+          <div class="control-formulario">
+          <label>Esta en Oferta</label>
+          <input type="radio" name="enoferta">
+         </div>
+         <button type="reset" class="botton-form">Borrar</button> <!--aca van los botones-->
+         <button type="submit" class="botton-form">Guardar</button>
+      </form>
+
+
+
+
+
+
+
+
+
+    <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apolo</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/98eaad93ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/lightslider.css">
+    <!--es para hacer el slider-->
+    <link rel="stylesheet" href="/css/style-productCart.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!--es para hacer el slider-->
+    <script type="text/javascript" src="js/lightslider.js"></script>
+    <!--es para hacer el slider-->
+  </head>
+  
+<body>
+  <%- include("../partial/header") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+
+  <main>
+    <h4 class="title">Carrito de Compras</h4>
+    <section class="conteiner-cart">
+      <div class="second-section-tablet">
+      <article class="second-section ">
+        <div class="second">
+          <img class="img-sect" src="/img/botin-adidas2.jpg">
+        </div>
+        <div class="description-botin">
+          <p>Botin Hombre Predator mutation</p>
+          <p>Color: Cloud White / Core Black</p>
+          <p>Talla: 34 (UK 3)</p>
+          <p>$35000</p>
+          <div class="garbage">
+          <label>Cantidad</label> 
+          <div>
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+          <select name="categoria" class="control"> <!--el name es solo para el Backend-->
+           <option value="Un articulo">1</option> <!--el value es para q el backend identifique de que se trata-->
+           <option value="Dos articulos">2</option>
+           <option value="Tres articulos">3</option>
+           <option value="Cuatro articulos">4</option>
+           <option value="Conco articulos">5</option>
+          </select>
+        </div>
+        
+      </article>
+      <article class="second-section-1 ">
+        <div class="second">
+          <img class="img-sect" src="/img/botin-puma.jpg">
+        </div>
+        <div class="description-botin">
+          <p>Botin Puma Ultra 4.3</p>
+          <p>Color: Cloud White / Core Red</p>
+          <p>Talla: 34 (UK 3)</p>
+          <p>$25000</p>
+          <div class="garbage">
+          <label>Cantidad</label> 
+          <div>
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+          <select name="categoria" class="control"> <!--el name es solo para el Backend-->
+           <option value="Un articulo">1</option> <!--el value es para q el backend identifique de que se trata-->
+           <option value="Dos articulos">2</option>
+           <option value="Tres articulos">3</option>
+           <option value="Cuatro articulos">4</option>
+           <option value="Conco articulos">5</option>
+          </select>
+        </div>
+        
+      </article>
+    
+    </div>
+      <article class="third-section">
+        <h4 class="title">Resumen de Compra</4>
+          <form action="#" method="GET">
+            <label for="cupon">Cupon de Descuento:</label>
+            <input type="text" name="cupon descuento" id="cupon" placeholder="Codigo" class="control">
+          </form>
+          <div class="subtotal">
+            <p>Subtotal</p>
+            <p>$60000</p>
+          </div>
+          <div class="total">
+            <p>Total</p>
+            <p>$60000</p>
+          </div>
+          <button type="submit" class="botton-form-login">Finalizar Compra</button>
+          <div>
+          <button type="submit" class="keep-buying"><span>Continuar Comprando</span></button>
+        </div>
+      </article>
+   
+    </section>
+  </main>
+
+  <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+</body>
+
+</html>

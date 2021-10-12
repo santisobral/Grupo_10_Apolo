@@ -120,14 +120,13 @@ body{
         height: 30px;
     }
     .botton-form-login {
-        background-color: #25ced1;
+        background-color:#25ced1;
         border: none;
         padding: 5px 10px;
         font-style: oblique;
         color: #FFFF;
         border-radius: 5px;
-        width: 50%;
-        margin-bottom: 5px;
+        margin-right: 5px;
     }
     .search-bar-bar{
         display: none;
@@ -187,9 +186,7 @@ body{
     } 
     .box-3{
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        height: 60px;
     }
     .inicio{
         text-decoration: none;/* le saco el subrrayado al enlace*/
@@ -212,6 +209,7 @@ body{
     }
     .main-buy{
       display: flex;  
+      margin-left: 5px;
     }
     .buy{
         display: block;
@@ -242,7 +240,8 @@ body{
     }
     .search-bar-bar {
         display: block;
-        min-width: 200px;
+        border-radius: 5px;
+        text-align: center;
     }
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
