@@ -20,6 +20,11 @@ let productController = {
        
   
         res.render("product/editProduct")
+       },
+       listaDeProductos: (req, res) => {
+       
+  
+        res.render("product/productList")
        }
 }
 
