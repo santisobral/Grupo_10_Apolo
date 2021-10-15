@@ -3,6 +3,11 @@
     margin: 0px;
     padding: 0px;
 }
+
+img{
+    width: 100%;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     padding-top: 90px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
@@ -118,75 +123,9 @@ body{
         padding: 5px 0;
     }
 }
-* Formulario*/
-.create-form{
-    padding: 20px 15px;
-    margin-top: 240px;/* le doy el mismo tamano que el header para que me aparezca el formulario completo*/
-}
-.control-formulario{
-    margin-bottom: 15px; /* me sapara los elementos de cada div hacia abajo*/
-}
-.control-formulario label {
-    margin-bottom: 5px; 
-    font-style: italic;
-    display: block; /* Me los acomoda uno abajo del otro porque cada elemento toma todo el espacio disponible a lo ancho*/
-}
-.control{
-    width: 100%; /* a todos los input y select les doy todo el ancho*/
-    padding: 15px 10px;
-}
-.botton-form{ /* dandole estilo al boton*/
-    background-color:blueviolet;
-    border: none;
-    padding: 5px 10px;
-    font-style: oblique;
-    color: #FFFF;
-    border-radius: 5px;
-}
-.footer{
-    background-color:#EA526F;
-    padding-top: 10px;
-}
-.footer h3 {
-    font-size: 15px;
-    color:white;
-    padding-left: 10px;
-}
-.footer-botton{
-    border-top:  solid 0.5px whitesmoke;
-    display: block; /* si no le pongo este display block no me toma el border-top*/
-    margin-top: 15px;
-}
-.privacity{
-    color: white;
-    font-size: 15px;
-
-    padding-left: 10px;
-}
-.all-icons{
-    margin-top: 15px ;
-}
-.icons{
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.bloque{
-    display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
-}
-.sear-bar-bar{
-    display: none;
-}
-.botton-form-login {
-    background-color:#25ced1;
-    border: none;
-    padding: 5px 10px;
-    font-style: oblique;
-    color: #FFFF;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-.buy{
-    display: none;
+/* Main */
+.producto{
+    border: solid red 2px;
 }
 
 
