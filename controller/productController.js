@@ -19,7 +19,7 @@ let productController = {
        editarProducto: (req, res) => {
        
   
-        res.render("product/editProduct")
+        res.render("product/editProduct", {producto:{id:''}})
        },
        listaDeProductos: (req, res) => {
        
