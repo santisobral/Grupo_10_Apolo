@@ -120,7 +120,7 @@ body{
     }
     /*FORMULARIO*/
     .create-form{
-        padding: 20px 15px;
+        padding: 60px 15px;
         background-color:#DCDCDC;
         text-align: center;
     }
@@ -134,7 +134,7 @@ body{
         display: block; /* Me los acomoda uno abajo del otro porque cada elemento toma todo el espacio disponible a lo ancho*/
     }
     .control{
-        width: 50%; /* a todos los input y select les doy todo el ancho*/
+        width: 66%; /* a todos los input y select les doy todo el ancho*/
         padding: 15px 10px;
         border-radius: 5px;
         text-align: center;
