@@ -5,8 +5,9 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 90px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+    padding-top: 10%;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
+
 
 /* HEADER*/
 @media (min-width: 320px){
@@ -117,7 +118,59 @@ body{
         color: black;
         padding: 5px 0;
     }
+    /*FORMULARIO*/
+    .create-form{
+        padding: 60px 15px;
+        background-color:#DCDCDC;
+        text-align: center;
+    }
+    .control-formulario{
+        margin-bottom: 15px; /* me sapara los elementos de cada div hacia abajo*/
+    
+    }
+    .control-formulario label {
+        margin-bottom: 10px; 
+        font-style: italic;
+        display: block; /* Me los acomoda uno abajo del otro porque cada elemento toma todo el espacio disponible a lo ancho*/
+    }
+    .control{
+        width: 66%; /* a todos los input y select les doy todo el ancho*/
+        padding: 15px 10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .botton-form{ /* dandole estilo al boton*/
+        background-color:coral;
+        border: none;
+        padding: 5px 10px;
+        font-style: oblique;
+        color: #FFFF;
+        border-radius: 5px;
+    }
+    .botton-form-login:hover{
+    background-color: #0022AA;
+    }
+    .botton-form-login {
+        background-color:blueviolet;
+        border: none;
+        padding: 5px 10px;
+        font-style: oblique;
+        color: #FFFF;
+        border-radius: 5px;
+        width: 50%;
+    }
+    .radio-button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .radio-button__radio {
+        margin-top: 3px;
+    }
 }
+
+
+/* Footer*/
 .footer{
     background-color:#EA526F;
     padding-top: 10px;
@@ -166,10 +219,6 @@ body{
 
 
 @media(min-width:768px) {
-    body{
-        font-family: 'Roboto', sans-serif;
-        padding-top: 140px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
-    }
     .main-header-top{
         display: flex;
         justify-content: center ;
@@ -179,7 +228,7 @@ body{
     } 
     .box-3{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between
     }
     .inicio{
         text-decoration: none;/* le saco el subrrayado al enlace*/
@@ -206,8 +255,8 @@ body{
         text-align: center;
     }
     .main-buy{
-      display: flex;  
-      margin-left: 5px;
+      display: flex; 
+      margin-left: 5px; 
     }
     .buy{
         display: block;
@@ -306,4 +355,5 @@ margin:0 10px;
    
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 25px;
-}}
+    }
+}
