@@ -8,10 +8,18 @@
   <%- include("partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
   <main>
     <!-- Empieza la seccion de los articulos-->
+    
     <section> 
       <div class="slider"> <!--Fila 81 a la 109 es para el Slider-->
         <ul id="autoWidth" class="cs-hidden">
-          <li class="item-a"> 
+          <% sliderInfo.forEach(element => { %>
+            <li class="<%= element.class %>"> 
+              <div class="slider-img">
+                <img  src="/img/<%= element.img %>">
+              </div>
+            </li>
+          <% }) %>
+          <!-- <li class="item-a"> 
             <div class="slider-img">
               <img  src="/img/Imagen-principal.jpg">
             </div>
@@ -45,7 +53,7 @@
             <div class="slider-img">
               <img  src="/img/img-slider-women.jpg">
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div>

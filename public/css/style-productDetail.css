@@ -1,32 +1,11 @@
 *{
     box-sizing: border-box;  /* es para que al agregar propiedades como el paddin,border no me aumento el tamaño de la pagina*/
     margin: 0px;
-    padding: 0px;    
+    padding: 0px;
 }
 body{
     font-family: 'Roboto', sans-serif;
     padding-top: 94px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
-    background-color:#25CED1 ;
-}
-.box-formulario-editProduct {
-    width: 100%;
-    background-color:#25CED1 ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    padding: 10px 0px;
-    height: 100%;
-}
-
-.box-formulario-editProduct{ /*css de editProduct*/
-    width: 100%;
-    background-color:#25CED1 ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    margin-top: 3px;
 }
 /*--------------------------------------------------------------------------*/
 /* HEADER*/
@@ -155,7 +134,7 @@ body{
 }
 
 
-/*------------------------------    --------------------------------------------*/
+/*--------------------------------------------------------------------------*/
 /* FOOTER*/
 .footer{
     background-color:#EA526F;
@@ -334,12 +313,6 @@ margin:0 10px
  
 
 @media(min-width:1024px) {
-    .footer{
-        position: fixed;
-        bottom: 0px;
-        width: 100% /*el position absolute no deja que el footer tomo todo el ancho por eso le doy el 100%*/;
-    }
-
     .lupa{
         display: block;  
         font-size: 20px;

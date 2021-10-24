@@ -39,8 +39,8 @@
              </select>
           </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
-            <label>Talles:</label> 
-             <select name="Talles" class="control"> <!--el name es solo para el Backend-->
+            <label>Talle:</label> 
+             <select name="Talle" class="control"> <!--el name es solo para el Backend-->
               <option value="Small">S</option> <!--el value es para q el backend identifique de que se trata-->
               <option value="Medium">M</option>
               <option value="Large">L</option>
@@ -55,25 +55,29 @@
               <option value="Blanco">Blanco</option>
               <option value="Gris">Gris</option>
              </select>
+          </div> 
           <div class="control-formulario">
             <label>Descripcion:</label> <!--aca van los comentarios-->
             <textarea name="descripcion" class="control"></textarea>
           </div>
-          <div>
-            <label>Foto del Producto:</label>
-            <input type="text" name="nombre" placeholder="IMAGEN" class="control">
-           </div>
           <div class="control-formulario">
-          <label>Esta en Oferta:</label>
-          <input type="radio" name="enoferta">
-         </div>
-        </div>
-        <div class="control-formulario">
-        <label>Nueva Temporada:</label>
-        <input type="radio" name="nuevatemporada">
-       </div>
-         <button type="reset" class="botton-form">Borrar</button> <!--aca van los botones-->
-         <button type="submit" class="botton-form">Guardar</button>
+            <label>Foto del Producto:</label>
+            <input type="file" name="nombre" placeholder="IMAGEN" class="control">
+          </div>
+          <div class="control-formulario">
+            <div class="radio-button-container" >
+              <label>Esta en Oferta:</label>
+              <input type="radio" name="enoferta" class = "radio-button__radio">
+            </div>
+          </div>
+          <div class="control-formulario">
+            <div class="radio-button-container" >
+              <label>Nueva Temporada:</label>
+              <input type="radio" name="enoferta" class = "radio-button__radio">
+            </div>
+          </div>
+          <button type="reset" class="botton-form">Borrar</button> <!--aca van los botones-->
+          <button type="submit" class="botton-form">Guardar</button>
       </form>
 
 
