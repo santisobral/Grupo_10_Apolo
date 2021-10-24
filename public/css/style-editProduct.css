@@ -136,7 +136,7 @@ body{
     .control{
         width: 66%; /* a todos los input y select les doy todo el ancho*/
         padding: 15px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         text-align: center;
     }
     .botton-form{ /* dandole estilo al boton*/
@@ -159,7 +159,14 @@ body{
         border-radius: 5px;
         width: 50%;
     }
-
+    .radio-button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .radio-button__radio {
+        margin-top: 3px;
+    }
 }
 
 
