@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
+
   <%- include("../partial/head.ejs",{cssfile:"style-productList"}) %> <!--cssfile es una variable que va a guardar la hoja de estilo-->
-=======
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,53 +18,170 @@
         <script type="text/javascript" src="js/jquery.min.js"></script> <!--es para hacer el slider-->
         <script type="text/javascript" src="js/lightslider.js"></script> <!--es para hacer el slider-->
       </head>
->>>>>>> d05b9c23bd94effa516f460d1f2533adfafc5652
 <body>
     <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 
    <main>
-     <section class="mainSectionList">
-       <h2>Todos los productos</h2>
-       <div class="listaProductos">
+    
+     <section class="seccion-lista-productos">
+      <h1 class="titulo-productos">Todos los productos</h1>
+       <div class="listaProductos"> 
          <article class="producto">
-           <a href=""></a>
-           <img src="/img/pelota-nike.jpg" alt="">
-           <div class="detalle">
-             <p>Precio</p>
-             <p>Descuento</p>
-             <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-           </div>
+           <a href="" class="product-content">
+              <div class="producto-img-box">
+                <img src="/img/pelota-nike.jpg" alt="" class="imgProduct">
+              </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+            </a>
          </article>
 
          <article class="producto">
-          <a href=""></a>
-          <img src="/img/pelota-adidas.jpg" alt="">
-          <div class="detalle">
-            <p>Precio</p>
-            <p>Descuento</p>
-            <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-          </div>
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+              <img src="/img/pelota-adidas.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
         </article>
 
         <article class="producto">
-          <a href=""></a>
-          <img src="/img/pelota-penalty.jpg" alt="">
-          <div class="detalle">
-            <p>Precio</p>
-            <p>Descuento</p>
-            <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-          </div>
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+              <img src="/img/pelota-penalty.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
         </article>
 
         <article class="producto">
-          <a href=""></a>
-          <img src="/img/Guantes-arquero-topper.jpg" alt="">
-          <div class="detalle">
-            <p>Precio</p>
-            <p>Descuento</p>
-            <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-          </div>
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/Guantes-arquero-topper.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
         </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/camiseta-argentina.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/camiseta-boca.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/botines-adidas.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/botin-puma.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/botines-topper.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/guantes-arquero-naranja.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/botin-adidas-rojo3.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
+        <article class="producto">
+          <a href="" class="product-content">
+            <div class="producto-img-box">
+          <img src="/img/diadora.jpg" alt="" class="imgProduct">
+            </div>
+              <div class="detalle">
+                <p>Precio</p>
+                <p>Descuento</p>
+                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+              </div>
+          </a>
+        </article>
+
        </div>
      </section>
    </main>

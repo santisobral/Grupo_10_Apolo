@@ -6,11 +6,16 @@
 
 img{
     width: 100%;
+    height: auto;
 }
 
 body{
     font-family: 'Roboto', sans-serif;
     padding-top: 90px;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+}
+
+a{
+    text-decoration: none;
 }
 
 /* HEADER*/
@@ -124,10 +129,54 @@ body{
     }
 }
 /* Main */
-.producto{
-    border: solid red 2px;
+
+main{
+
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
+
+.producto{
+    border: solid black 2px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px #888888;
+    transition: box-shadow 0.2s;
+}
+
+.producto-img-box {
+    border-bottom: 1px solid #888888;
+}
+
+.detalle {
+    padding: 5px;
+    color: #25ced1;
+}
+
+.titulo-productos {
+    display: inline-block;
+    padding-left: 10px;
+    color: coral;
+    margin: none;
+    text-shadow: 0.5px 0.5px #888888;
+}
+
+.imgProduct {
+    max-width: 300px;
+}
+
+.producto:hover{
+    box-shadow: 4px 6px 7px #888888;
+}
+
+.listaProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 @media(min-width:768px) {
     body{
