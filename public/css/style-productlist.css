@@ -26,6 +26,18 @@ a{
         width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
         z-index: 1;/* es para que el header se posicione por adelante de los demas elementos y se visualice al scroolear*/
     }
+    .slider{
+        display: flex;/* me acomoda cada imagen del slider en forma horizontal*/
+    }
+    .slider-img{ /* aca estoy defiendo el alto y ancho del contenedor del slider para que las imagenes tengan el mismo tamaño*/
+       width: 380px;
+       height: 300px;
+    }
+    .slider-img img{ /* aca las img tomen el 100% del tamaño de su contenedor*/
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .main-header-top{
         background-color:#25ced1;
         padding-top: 5px;
@@ -127,7 +139,69 @@ a{
         color: black;
         padding: 5px 0;
     }
-}
+    /*MAIN*/
+    .version-tablet{
+        display: none;
+    }
+    .precio{
+        color: #25ced1;
+    }
+    .descuento{
+        color: #25ced1;
+    }
+    .img-section{
+        width:100%;
+    }
+    .title-section{
+        text-align: center;
+    }
+    /* FOOTER*/
+    .footer{
+        background-color:#EA526F;
+        padding-top: 10px;
+    }
+    .footer h3 {
+        font-size: 15px;
+        color:white;
+        padding-left: 10px;
+    }
+    .footer-botton{
+        border-top:  solid 0.5px whitesmoke;
+        display: block; /* si no le pongo este display block no me toma el border-top*/
+        margin-top: 15px;
+    }
+    .privacity{
+        color: white;
+        font-size: 15px;
+    
+        padding-left: 10px;
+    }
+    .all-icons{
+        margin-top: 15px ;
+    }
+    .icons{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .bloque{
+        display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
+    }
+    .sear-bar-bar{
+        display: none;
+    }
+    .botton-form-login {
+        background-color:#25ced1;
+        border: none;
+        padding: 5px 10px;
+        font-style: oblique;
+        color: #FFFF;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+    .buy{
+        display: none;
+    }
+    }
 /* Main */
 
 main{
@@ -176,6 +250,36 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.footer{
+    background-color:#EA526F;
+    padding-top: 10px;
+}
+.footer h3 {
+    font-size: 15px;
+    color:white;
+    padding-left: 10px;
+}
+.footer-botton{
+    border-top:  solid 0.5px whitesmoke;
+    display: block; /* si no le pongo este display block no me toma el border-top*/
+    margin-top: 15px;
+}
+.privacity{
+    color: white;
+    font-size: 15px;
+
+    padding-left: 10px;
+}
+.all-icons{
+    margin-top: 15px ;
+}
+.icons{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.bloque{
+    display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
 }
 
 @media(min-width:768px) {
