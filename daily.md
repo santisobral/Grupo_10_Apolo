@@ -3,4 +3,4 @@
 14-10 - Nos reunimos en la clase en la que nos dividieron en grupos y cada uno mostro en lo que iba avanzando. 
 23-10 - En esta dayli, nos tocaba tener terminado la parte que le correspondia a cada uno y nos encontramos con algunos inconvenientes en donde pudimos resolver algunos de esos inconvenientes y otro quedaron para la reunion del 24-10. 
 24-10 - Dayli de 20-25 minutos en la mostramos las diferentes alternativas para las vistas de edit y create. Despues de la eleccion de las vistas revisamos errores y asignamos las tareas para terminar el sprint. Unificar versiones, quitar la opcion color y unificar botones.
-25-10 - 
+25-10 - Se junto el equipo para revisar que los objetivos del sprint esten cumplidos. Fijamos reuniones para el miercoles y sabado con el objetivo de organizar el proximo sprint
