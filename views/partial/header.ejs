@@ -9,16 +9,18 @@
 
     <div class="main-header">
       <div class="main-header-top-bar">
-        <span><a class="inicio" href="./user/login">ACCEDER</a></span>
+        <span><a class="inicio" href="/user/login">ACCEDER</a></span>
         <div>
           <a href="#" class="hamburger-button">
             <i class="fas fa-bars"></i>
             <!--lo traigo de font awesome-->
           </a>
         </div>
-        <div class="apolo-logo">
-          <img src="/img/logo_small-pelota.png" class="logo">
-        </div>
+        <a href="/">
+          <div class="apolo-logo">
+            <img src="/img/logo_small-pelota.png" class="logo">
+          </div>
+        </a>
         <div class="box-3">
           <form>
             <div class="barra">
@@ -27,9 +29,11 @@
             </div>
           </form>
           <div class="main-buy">
-            <div>
-              <i class="fas fa-cart-arrow-down carrito"></i>
-            </div>
+            <a href="/product/productCart">
+              <div>
+                <i class="fas fa-cart-arrow-down carrito"></i>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -40,8 +44,8 @@
         <ul class="navbar">
           <li><a href="#">HOMBRES</a></li>
           <li><a href="#">MUJERES</a></li>
+          <li><a href="./product/productList">TODOS LOS PRODUCTOS</a></li>
           <li><a href="#">NUEVA TEMPORADA</a></li>
-          <li><a href="#">MARCAS</a></li>
           <li><a href="#"> SUPER OFERTAS</a></li>
         </ul>
 

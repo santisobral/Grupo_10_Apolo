@@ -26,165 +26,24 @@
      <section class="seccion-lista-productos">
       <h1 class="titulo-productos">Todos los productos</h1>
        <div class="listaProductos"> 
+         <% products.forEach(producto => {%>
          <article class="producto">
-           <a href="" class="product-content">
+           <a href="/product/productDetail/<%= producto.id %>" class="product-content">
               <div class="producto-img-box">
-                <img src="/img/pelota-nike.jpg" alt="" class="imgProduct">
+                <img src="/img/<%=producto.image %>" alt="" class="imgProduct">
               </div>
               <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
+                <p>$<%=producto.price %></p>
+                <p><%=producto.discount %> % off</p>
+                <h3 class="descripcionArticulo"><%=producto.description %></h3>
               </div>
             </a>
          </article>
+         <% }) %>
+        </div>
+      </section>
+    </main>
 
-         <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-              <img src="/img/pelota-adidas.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-              <img src="/img/pelota-penalty.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/Guantes-arquero-topper.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/camiseta-argentina.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/camiseta-boca.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/botines-adidas.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/botin-puma.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/botines-topper.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/guantes-arquero-naranja.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/botin-adidas-rojo3.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-        <article class="producto">
-          <a href="" class="product-content">
-            <div class="producto-img-box">
-          <img src="/img/diadora.jpg" alt="" class="imgProduct">
-            </div>
-              <div class="detalle">
-                <p>Precio</p>
-                <p>Descuento</p>
-                <h3 class="descripcionArticulo">Descripcion Articulo</h3>
-              </div>
-          </a>
-        </article>
-
-       </div>
-     </section>
-   </main>
 
     <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 </body>

@@ -1,4 +1,5 @@
 let express = require("express");
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 let app = express();
 
@@ -11,7 +12,10 @@ var usersRouter = require('./routes/usersRouter');
 
 // aca genero una ruta estatica que va a consumir los recursos de la carpeta public
 const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta public definida que la voy a usar para acceder a los recursos estaticos dentro de public
-app.use(express.static(publicPath))
+app.use(express.static(publicPath));
+app.use(express.urlencoded({ extended: false })); 
+app.use(express.json());
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 // Template engine
 app.set("views", "./views"); // es para que por defecto tome la vista
 app.set("view engine", "ejs");

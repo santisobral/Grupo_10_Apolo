@@ -5,33 +5,33 @@
 <body>
     <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 
-    <form action="/crear-producto" method="POST" class="create-form">
+    <form action="/product/editProduct/<%= product.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
         <div class="control-formulario">
          <label>Nombre del Producto:</label>
-         <input type="text" name="nombre" placeholder="nombre producto" class="control"> <!--el atibuto name es de para una mejor identificacion del Backend-->
+         <input type="text" name="name" placeholder="nombre producto" class="control" value="<%= product.name %> "> <!--el atibuto name es de para una mejor identificacion del Backend-->
         </div>
         <div class="control-formulario">
           <label>Precio:</label>
-          <input type="number" name="precio" class="control">
+          <input type="text" name="price" class="control" value="<%= product.price %> ">
          </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
              <label>Genero:</label> 
-              <select name="Genero" class="control"> <!--el name es solo para el Backend-->
+              <select name="gender" class="control"> <!--el name es solo para el Backend-->
                <option value="Hombre">Hombre</option> <!--el value es para q el backend identifique de que se trata-->
                <option value="Mujer">Mujer</option>
               </select>
            </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Categoria:</label> 
-             <select name="Categoria" class="control"> <!--el name es solo para el Backend-->
-              <option value="Futbol">Futbol</option> <!--el value es para q el backend identifique de que se trata-->
-              <option value="Entrenamiento">Entrenamiento</option>
-              <option value="Calzado">Calzado</option> 
+             <select name="category" class="control"> <!--el name es solo para el Backend-->
+              <option value="botines">Botines</option> <!--el value es para q el backend identifique de que se trata-->
+              <option value="remeras">Remeras</option>
+              <option value="pelotas">Pelotas</option> 
              </select>
           </div>
           <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Marca:</label> 
-             <select name="Marca" class="control"> <!--el name es solo para el Backend-->
+             <select name="brand" class="control"> <!--el name es solo para el Backend-->
               <option value="Adidas">Adidas</option> <!--el value es para q el backend identifique de que se trata-->
               <option value="Nike">Nike</option>
               <option value="Puma">Puma</option> 
@@ -40,7 +40,7 @@
           </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Talle:</label> 
-             <select name="Talle" class="control"> <!--el name es solo para el Backend-->
+             <select name="size" class="control"> <!--el name es solo para el Backend-->
               <option value="Small">S</option> <!--el value es para q el backend identifique de que se trata-->
               <option value="Medium">M</option>
               <option value="Large">L</option>
@@ -49,22 +49,22 @@
           </div>
           <div class="control-formulario">
             <label>Descripcion:</label> <!--aca van los comentarios-->
-            <textarea name="descripcion" class="control"></textarea>
+            <textarea name="description" class="control"><%= product.description %></textarea>
           </div>
           <div class="control-formulario">
             <label>Foto del Producto:</label>
-            <input type="file" name="nombre" placeholder="IMAGEN" class="control">
+            <input type="file" name="editImage" placeholder="IMAGEN" class="control">
           </div>
           <div class="control-formulario">
             <div class="radio-button-container" >
               <label>Esta en Oferta:</label>
-              <input type="radio" name="enoferta" class = "radio-button__radio">
+              <input type="radio" name="sale" class = "radio-button__radio">
             </div>
           </div>
           <div class="control-formulario">
             <div class="radio-button-container" >
               <label>Nueva Temporada:</label>
-              <input type="radio" name="enoferta" class = "radio-button__radio">
+              <input type="radio" name="newseason" class = "radio-button__radio">
             </div>
           </div>
           <button type="submit" class="botton-form">Guardar Producto</button> <!--aca van los botones-->

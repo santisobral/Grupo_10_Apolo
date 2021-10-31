@@ -90,6 +90,16 @@ body{
     color: #25ced1;
     margin-left: 0px;
 }
+ .botton-form{ /* dandole estilo al boton*/
+    background-color:coral;
+    border: none;
+    padding: 5px 10px;
+    font-style: oblique;
+    color: #FFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 5px;
+}
 
 
 @keyframes aumentar{
@@ -130,6 +140,9 @@ body{
     }
     .search-bar-bar{
         display: none;
+    }
+    .edit-delete{
+        display: flex;
     }
 }
 
@@ -246,11 +259,7 @@ body{
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
     } 
-    .footer{
-        position: fixed;
-        bottom: 0px;
-        width: 100% /*el position absolute no deja que el footer tomo todo el ancho por eso le doy el 100%*/;
-    }
+    
     .footer{
         background-color:#EA526F;
         padding-top: 20px;
@@ -479,7 +488,7 @@ i.far.fa-credit-card{
 
 .img-botin-adidas {
     padding-left: 1%;
-    height: 180px;
+    height: 380px;
     object-fit: cover;
 }
 
@@ -503,7 +512,7 @@ i.far.fa-credit-card{
 @media(min-width:1024px) {
     .img-botin-adidas {
         padding-left: 1%;
-        height: 299px;
+        height: 450px;
         object-fit: cover;
     }
     .titulo-articulo {

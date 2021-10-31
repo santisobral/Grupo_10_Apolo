@@ -144,6 +144,14 @@ body{
 .title-section{
     text-align: center;
 }
+.box-shadow{
+    border: solid black 2px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px #888888;
+    transition: box-shadow 0.2s;
+}
+
 /* FOOTER*/
 .footer{
     background-color:#EA526F;
@@ -270,8 +278,10 @@ body{
     /* seccion ropa*/
     .tablet{
         display: flex;
-        justify-content: center;    
+        justify-content: center; 
     }
+   
+    
     .slider-img{
         width: 400px;
         height: 300px;

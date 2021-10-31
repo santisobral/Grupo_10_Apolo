@@ -23,41 +23,43 @@
           <div class="titulos">
             <img class="logo-adidas" src="/img/logo-adidas.png">
             <div>
-              <h1 class="titulo-articulo">Botines Adidas Copa Sense.3 FG</h1>
+              <h1 class="titulo-articulo"><%= product.name %></h1>
             </div>
           </div>
         </div>
         <div class="section-main">
         <div class="conteiner-img">
         <div class="imagen-botin">
-          <img class="img-botin-adidas" src="/img/Botin-adidas2.jpg">
+          <img class="img-botin-adidas" src="/img/<%= product.image %>">
         </div>
 
         <div class="box-box">
-          <img class="img-botines-chicos" src="/img/botin-adidas-rojo3.jpg">
-          <img class="img-botines-chicos" src="/img/botin-adidas-rojo.jpg">
-          <img class="img-botines-chicos" src="/img/botin-adidas-rojo2.jpg">
+          <img class="img-botines-chicos" src="/img/<%= product.image %>">
+          <img class="img-botines-chicos" src="/img/<%= product.image %>">
+          <img class="img-botines-chicos" src="/img/<%= product.image %>">
         </div>
       </div>
+     
       <div class="hola2">
+        <h4 class="nombre-producto"><%= product.description %></h4>
         <div class="box-precio">
-          <p class="precio">$ 35.000</p>
+          <p class="precio">$ <%= product.price %></p>
         </div>
         <div class="box-tarjeta">
           <p class="tarjeta">Calcula las cuotas con tu medio de pago<i class="far fa-credit-card"></i> <p class="tarjeta"></p>
             </p>
         </div>
         <div class="detalle-producto">
-          <h4 class="nombre-producto">DETALLE</h4>
-          <ul class="navbar">
+          
+          <!-- <ul class="navbar">
             <li>Color : Red/Cloud white</li>
             <li>Sistema de atado de cordones</li>
             <li>Exterior de cuero</li>
             <li>Cuello elastico</li>
             <li>Suela para terreno firme</li>
-          </ul>
+          </ul> -->
           <div>
-            <h2 class="talle">Seleccioná el talle</h2>
+            <h2 class="talle"></h2>
             <div class="talle2">
               <div class="box-box-lista">
                 <label class="box-lista" class="talle2"><b>Talle</b></label>
@@ -76,11 +78,17 @@
                   <option value="Otros...">Otros...</option>
                 </select>
               </div>
-              <div class="botom">
+              <form class="botom">
                 <button type="submit" title="Agregar al carrito" class="action primary tocart"
                   id="product-addtocart-button"><span>Agregar al carrito</span>
-              </div>
-              </button>
+                </button>
+              </form>
+              <div class="edit-delete">
+              <a href="/product/editProduct/<%= product.id %>" class="botton-form">EDITAR PRODUCTO</a>
+						<form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="botton-form">ELIMINAR</button>
+						</form>
+          </div>
             </div>
           </div>
         </div>

@@ -19,68 +19,27 @@
               </div>
             </li>
           <% }) %>
-          <!-- <li class="item-a"> 
-            <div class="slider-img">
-              <img  src="/img/Imagen-principal.jpg">
-            </div>
-          </li>
-          <li class="item-a"> 
-            <div class="slider-img">
-              <img  src="/img/nike-futbol-women.jpg">
-            </div>
-          </li>
-          <li class="item-b">
-            <div class="slider-img">
-              <img src="/img/Real-Madrid.jpg">
-            </div>
-          </li>
-          <li class="item-c">
-            <div class="slider-img">
-              <img src="/img/botas-adidas.jpg">
-            </div>
-          </li>
-          <li class="item-d">
-            <div class="slider-img">
-              <img  src="/img/Puma-camisa.jpg">
-            </div>
-          </li>
-          <li class="item-e">
-            <div class="slider-img">
-              <img  src="/img/R.jpg">
-            </div>
-          </li>
-          <li class="item-a"> 
-            <div class="slider-img">
-              <img  src="/img/img-slider-women.jpg">
-            </div>
-          </li> -->
         </ul>
       </div>
       <div>
-        <img class="img-section" src="/img/temporada.jpg">
+        <img class="img-section" src="/img/temporada.jpg"> <!--Esta queda asi-->
       </div>
+     <!--Primer seccion-->
       <div class="tablet">
-        <article>
+         <% pelotasAEnviar.forEach(producto => { %> 
+          
+        <article class="box-shadow" >
           <div class="img-2">
-            <img class="img-section" src="/img/pelota-adidas.jpg">
+           <a href="/product/productDetail/<%= producto.id %>"> <img class="img-section" src="/img/<%= producto.image %>"></a>
           </div>
-          <p class="precio">$6999</p>
-          <p class="descuento">10% off</p>
-          <p>Pelota Adidas</p>
+          <p class="precio">$<%= producto.price %> </p>
+          <p class="descuento"><%= producto.discount %> % off</p>
+          <p><%= producto.name %> </p>
         </article>
-        <article class="version-tablet">
-          <img class="img-section" src="/img/pelota-penalty.jpg">
-          <p class="precio">$7500</p>
-          <p class="descuento">10% off</p>
-          <p>Pelota Penalty</p>
-        </article>
-        <article class="version-tablet">
-          <img class="img-section" src="/img/pelota-nike.jpg">
-          <p class="precio">$7300</p>
-          <p class="descuento">10% off</p>
-          <p>Pelota Nike</p>
-        </article>
+        
+         <% }) %> 
       </div>
+     
       <h3 class="title-section">Nuevas conquistas</h3>
       <div class="tablet">
         <div class="img-1">
@@ -89,27 +48,20 @@
         <div>
           <img class="img-section" src="/img/chicos.jpg">
         </div>
-
       </div>
-      
-     
+      <!--Primer seccion-->
       <h3 class="title-section">Vamos Argentina</h3>
       <div class="tablet">
-        <article class="camiseta-tablet">
+        <% camisetaAEnviar.forEach(producto => { %> 
+        <article class="box-shadow">
           <div class="img-2">
-            <img class="img-section" src="/img/Camiseta.jpg">
+            <a href="/product/productDetail/<%= producto.id %>"> <img class="img-section" src="/img/<%= producto.image %>"></a>
           </div>
-          <p class="precio">$10000</p>
-          <p class="descuento">10% off</p>
-          <p>Camiseta Oficial</p>
+          <p class="precio">$<%= producto.price %></p>
+          <p class="descuento"><%= producto.discount %>% off</p>
+          <p><%= producto.name %></p>
         </article>
-
-        <article>
-          <img class="img-section" src="/img/Camiseta_Alternativa.jpg">
-          <p class="precio">$8500</p>
-          <p class="descuento">20% off</p>
-          <p>Camiseta Alternativa</p>
-        </article>
+        <% }) %>    
       </div>
 
       <div>
@@ -125,26 +77,18 @@
         </div>
       </div>
       <div class="tablet">
-        <article>
-          <div class="img-2">
-            <img class="img-section" src="/img/botin-adidas2.jpg">
+        <% botinAEnviar.forEach(producto => { %>   
+        <article class="box-shadow" >
+            <div class="img-2">
+              <a href="/product/productDetail/<%= producto.id %>"> <img class="img-section" src="/img/<%= producto.image %>"></a>
           </div>
-          <p class="precio">$35000</p>
-          <p class="descuento">20% off</p>
-          <p>Botin Adidas</p>
+        </a>
+          
+          <p class="precio">$<%= producto.price %></p>
+          <p class="descuento"><%= producto.discount %>% off</p>
+          <p><%= producto.name %></p>
         </article>
-        <article class="version-tablet">
-          <img class="img-section" src="/img/diadora.jpg">
-          <p class="precio">$9000</p>
-          <p class="descuento">20% off</p>
-          <p>Botin Umbro</p>
-        </article>
-        <article class="version-tablet">
-          <img class="img-section" src="/img/botin-puma.jpg">
-          <p class="precio">$20000</p>
-          <p class="descuento">20% off</p>
-          <p>Botin Nike</p>
-        </article>
+        <% }) %> 
       </div>
 
     </section>

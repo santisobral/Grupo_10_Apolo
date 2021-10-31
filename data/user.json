@@ -1,0 +1,20 @@
+[
+    {
+     "id": "1",
+     "name": "Santiago",
+     "lastName": "Sobral",
+     "birthdate": "01-20-90",
+     "email": "san@yahoo.com",
+     "password": 12345,
+     "image": "img-cafetera-moulinex.jpg"
+    },
+    {
+        "id": "1",
+        "name": "Santiago",
+        "lastName": "Sobral",
+        "birthdate": "01-20-90",
+        "email": "san@yahoo.com",
+        "password": 12345,
+        "image": "img-cafetera-moulinex.jpg"
+    }
+]
