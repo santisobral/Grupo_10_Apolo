@@ -84,11 +84,52 @@ body{
     border-radius: 50%;
     opacity: 1;
 }
-.hamburger-button{
+.bar-btn{
     display: block;
     font-size: 30px;
     color: #25ced1;
     margin-left: 0px;
+}
+.nav-menu{
+    position: fixed;
+    height: 0%;
+    width: 100%;
+    top: 100px;
+    transition: all .5s;
+
+}
+
+.nav-menu li {
+    display: none;
+    line-height: 30px;
+    margin: 10px 0;
+    transition: all .5s;
+    
+}
+.nav-menu li a {
+  color: #FFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+   background-color:#EA526F;
+ 
+
+}
+.nav-menu li a.active, .nav-menu li a:hover{
+    color: #25ced1;
+    transition: .3s;
+    
+}
+#check:checked ~ .nav-menu{
+    height: 100vh;
+}
+#check:checked ~ .nav-menu li{
+    display: block;
+}
+.check{
+    display: none;
+}
 }
  .botton-form{ /* dandole estilo al boton*/
     background-color:coral;
@@ -110,7 +151,13 @@ body{
         transform: scale(1.5);
     }
 }
-
+.imagen-botin{
+    height: 475px;
+    width: 450px;
+}
+.img-botin-adidas{
+    width: 100%;
+}
 .main-navbar{
     display: none
 }
@@ -144,7 +191,7 @@ body{
     .edit-delete{
         display: flex;
     }
-}
+
 
 
 /*--------------------------------------------------------------------------*/
@@ -211,11 +258,14 @@ body{
         display: flex;
         justify-content: center;
     }
+    .nav{
+        display: none;
+    }
     .lupa{
         font-size: 20px;
     }
     .barra{
-             display: flex; /* hago que se mustre la barra que la habia ocultado con display:none*/   
+             display: flex; 
     }
     .control{
         text-align: center;
@@ -264,8 +314,8 @@ body{
         width: 450px;
     }
     .img-botin-adidas{
-        max-width: 100%;
-        vertical-align: top;
+        width: 100%;
+       
         }
     
     .footer{

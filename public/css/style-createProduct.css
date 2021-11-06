@@ -102,11 +102,48 @@ body{
            
             opacity: 1;
         }
-        .hamburger-button{
+        .bar-btn{
             display: block;
             font-size: 30px;
             color: #25ced1;
             margin-left: 0px;
+        }
+        .nav-menu{
+            position: fixed;
+            height: 0%;
+            width: 100%;
+            top: 100px;
+            
+            transition: all .5s;
+        
+        }
+        .nav-menu li {
+            display: none;
+            line-height: 30px;
+            margin: 10px 0;
+            transition: all .5s;
+        }
+        .nav-menu li a {
+          color: #FFF;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 600;
+          text-decoration: none;
+          background-color:#EA526F;
+        
+        }
+        .nav-menu li a.active, .nav-menu li a:hover{
+            color: #25ced1;
+            transition: .3s;
+        }
+        #check:checked ~ .nav-menu{
+            height: 100vh;
+        }
+        #check:checked ~ .nav-menu li{
+            display: block;
+        }
+        .check{
+            display: none;
         }
         
         @keyframes aumentar{
@@ -237,6 +274,9 @@ body{
     .box-3{
         display: flex;
         justify-content: space-between
+    }
+    .nav{
+        display: none;
     }
     .inicio{
         text-decoration: none;/* le saco el subrrayado al enlace*/

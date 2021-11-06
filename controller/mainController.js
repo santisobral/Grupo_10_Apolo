@@ -66,8 +66,9 @@ let mainController = {
          camisetaAEnviar,
          botinAEnviar
         })
-     }
-     
+     },
+     nosotros: (req, res) => {
+      res.render("/sobreNosotros")
 }
-
+}
 module.exports = mainController

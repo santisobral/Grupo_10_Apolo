@@ -11,7 +11,7 @@
 }
 
 /* Header */
-@media (min-width:361px) {
+@media (min-width:320px) {
 .header-content{
     position: sticky;/* aca fijo el header*/
     top: 0;/* aca le digo al header que quede bien arriba*/
@@ -104,11 +104,48 @@
 .navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
     color: #25ced1;
 }
-.hamburger-button{
+.bar-btn{
     display: block;
     font-size: 30px;
     color: #25ced1;
     margin-left: 0px;
+}
+.nav-menu{
+    position: fixed;
+    height: 0%;
+    width: 100%;
+    top: 100px;
+    
+    transition: all .5s;
+
+}
+.nav-menu li {
+    display: none;
+    line-height: 30px;
+    margin: 10px 0;
+    transition: all .5s;
+}
+.nav-menu li a {
+  color: #FFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  background-color:#EA526F;
+
+}
+.nav-menu li a.active, .nav-menu li a:hover{
+    color: #25ced1;
+    transition: .3s;
+}
+#check:checked ~ .nav-menu{
+    height: 100vh;
+}
+#check:checked ~ .nav-menu li{
+    display: block;
+}
+.check{
+    display: none;
 }
 
 .main-navbar{
@@ -292,6 +329,9 @@ input {
     .apolo-logo{
         display: flex;
         justify-content: center;
+    }
+    .nav{
+        display: none;
     }
     .lupa{
         font-size: 20px;
