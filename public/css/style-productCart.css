@@ -223,6 +223,9 @@ body{
 
     padding-left: 10px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .all-icons{
     margin-top: 15px ;
 }
@@ -408,7 +411,7 @@ body{
     }
    
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
-        font-size: 25px;
+        font-size: 20px;
 }
 .title{
     font-size: 20px;

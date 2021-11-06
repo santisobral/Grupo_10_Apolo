@@ -11,7 +11,7 @@
 }
 
 /* Header */
-
+@media (min-width:361px) {
 .header-content{
     position: sticky;/* aca fijo el header*/
     top: 0;/* aca le digo al header que quede bien arriba*/
@@ -249,6 +249,9 @@ input {
 
     padding-left: 10px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .all-icons{
     margin-top: 15px ;
 }
@@ -264,7 +267,7 @@ input {
 }
 
 
-@media (min-width:361px) {
+
     
 }
 
@@ -334,7 +337,7 @@ input {
         margin: 0 10px;
     }
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
-        font-size: 15px;
+        font-size: 14px;
     } 
 
     /* footer*/

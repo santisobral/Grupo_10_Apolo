@@ -9,11 +9,11 @@
      "image": "img-cafetera-moulinex.jpg"
     },
     {
-        "id": "1",
-        "name": "Santiago",
-        "lastName": "Sobral",
+        "id": "2",
+        "name": "Emiliano",
+        "lastName": "Canellada",
         "birthdate": "01-20-90",
-        "email": "san@yahoo.com",
+        "email": "Cane@yahoo.com",
         "password": 12345,
         "image": "img-cafetera-moulinex.jpg"
     }

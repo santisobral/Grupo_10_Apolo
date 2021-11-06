@@ -16,6 +16,7 @@ let productController = {
       const product = products.find(producto =>{
         return producto.id == req.params.id
      });
+     
   
        res.render("product/productDetail",{
          product
@@ -27,7 +28,7 @@ let productController = {
   
         res.render("product/createProduct")
        },
-       // (post) Create - Método para guardar la info
+        // ************ (post) Create - Método para guardar la info ************
        store: (req, res) => {
        
         let newProducts = { // aca estamos creando el producto, pero no lo estamos guardando en el json, para eso lo hacemos en la fila
@@ -48,6 +49,7 @@ let productController = {
         
         res.redirect("/product/productList")
        },
+        // ************ (Get) editar un producto - Método que nos trae la vista del formulario para editar un producto ************
        editarProducto: (req, res) => {
         const product = products.find(producto =>{
           return producto.id == req.params.id
@@ -55,6 +57,7 @@ let productController = {
   
         res.render("product/editProduct", {product})
        },
+        // ************ (get)  - Método para devolver la lista de productos ************
        listaDeProductos: (req, res) => { // Porque funciona sin el find, al ir desde una img de productList a productDetail
         
   
@@ -62,6 +65,7 @@ let productController = {
           products
         })
        },
+        // ************ (put) editar - Método para editar la info que se envia desde el Formulario y que se almacenara en la base de datos ************
        update: (req, res) => { 
         let id = req.params.id;
 		let productToEdit = products.find(product =>{ // aca te busca el id que viene por url pero del array original
@@ -89,7 +93,7 @@ let productController = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, " "));
 		res.redirect("/product/productList") 
 	},
-    // (delete) Delete - Eliminar un producto de la DB
+     // ************ (delete)  - Método para eliminar un producto de la base de datos ************
 	destroy : (req, res) => {
 		// Eliminamos el producto que llegó por parametro su ID
 		//res.send("Producto con id " + req.params.id + " eliminado!")

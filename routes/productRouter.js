@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const multer = require("multer");
 
+
+// ************ Requiero la funcionalidad del controlador ************
 let productController = require("../controller/productController");
 
 // ************ Configuracion de Multer ************
@@ -16,7 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-
+// ************ Configuracion de las rutas ************
 // Devolver todos los productos  
 router.get("/productList",productController.listaDeProductos);
 router.post("/productList",upload.single("image"),productController.store);

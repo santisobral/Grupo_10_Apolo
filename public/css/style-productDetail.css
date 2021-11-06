@@ -259,6 +259,14 @@ body{
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
     } 
+    .imagen-botin{
+        height: 475px;
+        width: 450px;
+    }
+    .img-botin-adidas{
+        max-width: 100%;
+        vertical-align: top;
+        }
     
     .footer{
         background-color:#EA526F;
@@ -334,7 +342,7 @@ margin:0 10px
     }
    
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
-        font-size: 25px;
+        font-size: 20px;
 }
 }/*--------------------------------------------------------------------------*/
 /*section*/
@@ -342,10 +350,7 @@ margin:0 10px
 width: 97%;
 }
 
-.img-botin-adidas{
-width: 100%;
-padding-left: 1%;
-}
+
 .box-box{
     display: flex;
     position: relative;
@@ -488,7 +493,7 @@ i.far.fa-credit-card{
 
 .img-botin-adidas {
     padding-left: 1%;
-    height: 380px;
+    
     object-fit: cover;
 }
 

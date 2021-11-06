@@ -167,6 +167,9 @@ body{
     display: block; /* si no le pongo este display block no me toma el border-top*/
     margin-top: 15px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .privacity{
     color: white;
     font-size: 15px;
@@ -325,6 +328,7 @@ body{
         font-size: 15px;
         
     }
+   
     .footer-top h3{
         margin: 0 10px;
         font-size: 15px;
@@ -363,7 +367,7 @@ body{
     }
    
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
-        font-size: 25px;
+        font-size: 20px;
 }}
 
 }

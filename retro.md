@@ -28,3 +28,18 @@ Hacer menos:
 Dejar de hacer:
 1 Ante una pregunta por el grupo whatsapp que todos los participantes respondan. 
 
+Conclusiones sobre el tercer Sprint:
+Continuar haciendo: 
+1 Nos juntamos los dias que habiamos acordado.
+2 Llegamos mejor con el tiempo de entrega.
+3 Mantener la comunicacion fluida
+Hacer mas:
+1 Reuniones cortas para saber en que estado estan las actividades que vamos realizando.
+Comenzar a hacer:
+1 Hacer la dayli
+2 Resumen de lo visto en las reuniones
+Hacer menos:
+1  Dijimos que ibamos a tener listo en una determianda actividad fecha pero despues no ocurrio.
+Dejar de hacer:
+1 Pasar de hacer actividades individuales a grupales para que todos los integrantes entiendan sobre lo que se esta haciendo.
+

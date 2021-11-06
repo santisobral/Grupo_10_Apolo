@@ -196,6 +196,9 @@ body{
 
     padding-left: 10px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .all-icons{
     margin-top: 15px ;
 }
@@ -359,6 +362,6 @@ margin:0 10px;
     }
    
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
-        font-size: 25px;
+        font-size: 20px;
     }
 }
