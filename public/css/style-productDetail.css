@@ -79,10 +79,7 @@ body{
 
 }
 .navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
-    background-color:#25ced1;
-    color: white;
-    border-radius: 50%;
-    opacity: 1;
+    color: #25ced1;
 }
 .bar-btn{
     display: block;

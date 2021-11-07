@@ -104,7 +104,7 @@ img {
     transition: all 450ms; /* de esta forma al dar click sobre la barra de navegacion el cambio no se refleja de forma abrupta*/
 
 }
-.navbar li a:hover{ /* con este pseudo selector hago que cuando te posicion sobre los elementos de la barra cambien de color*/
+.navbar li a:hover{
     
     color: #25ced1;
    
