@@ -162,6 +162,23 @@ body{
     color: black;
     padding: 5px 0;
 }
+.about-me{
+    text-align: center;
+    font-size: 20px;
+}
+.businnes{
+    text-align: center;
+    color: white;
+}
+.section-store{
+    background-color: #EA526F;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+.description{
+    color: white;
+    padding-top: 10px;
+}
 /*MAIN*/
 .version-tablet{
     display: none;
@@ -340,6 +357,29 @@ body{
     .img-3{
         margin-right: 5px;
     } 
+    .store-tablet{
+        display: flex;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    .section-store{
+    background-color: #EA526F;
+    text-align: center;
+    margin: 0 5px;
+  
+    
+    }
+    .businnes{
+        color: white;
+    }
+    .description{
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+    }
+    .our-client{
+        padding-top: 10px;
+    }
  /* FOOTER*/
     .footer{
         background-color:#EA526F;

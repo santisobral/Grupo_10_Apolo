@@ -11,4 +11,4 @@ Sprint 4
 29-10 - Decimos que la actividades de este sprint la ibamos a realizar en grupo y continuamos con lo que habiamos dejado pendiente del dia 26. 
 30-10 - Avanzamos con la etapa de la configuracion de las rutas y con que las vistas se carguen dinamicamente. 
 31-10 - Al querer empezar con el Crud nos encontramos con  que las rutas que habiamos definido previamente se chocaban y tuvimos que solucionarlo. Al final de este dia el Crud quedo terminado. 
-03-11 - 
+06-11 - Nos juntamos para hacer que  el menu hamburguesa sea desplegable. Luego de terminar con esto nos encontramos con que si ingresamos desde la version mobile al product detail las imagenes se rompian, problema que no pudimos solucionar en esta dayli. 

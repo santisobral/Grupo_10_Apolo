@@ -46,6 +46,7 @@ let mainController = {
      }
      const botines = products.filter(producto =>{
         return producto.category == "Botin"
+       console.log(botines)
      });
      let botinAEnviar = [] ;
       cantidadDeIteraciones = 3;
@@ -68,7 +69,7 @@ let mainController = {
         })
      },
      nosotros: (req, res) => {
-      res.render("/sobreNosotros")
+      res.render("sobreNosotros")
 }
 }
 module.exports = mainController
