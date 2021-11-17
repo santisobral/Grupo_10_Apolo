@@ -1,5 +1,7 @@
 let express = require("express");
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+const session = require("express-session");
+const setLocals = require('./middlewares/setLocals.js');     //-> Guarda en locals la info del usuario en session
 
 let app = express();
 
@@ -16,12 +18,19 @@ const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta publi
 app.use(express.static(publicPath));
 // es para poder obtner la info que viaja desde el formulario(req.body)
 app.use(express.urlencoded({ extended: false })); 
+// es para trabajar con la session
+app.use(session({
+   secret: "Shhh, it s a secret",
+   resave: false,
+   saveUninitialized: false,
+}));
 // es para poder trabajar con el Json
 app.use(express.json());
 // Para poder usar los métodos PUT y DELETE
 app.use(methodOverride('_method')); 
 // Lo uso para el slider
 app.use('/js', express.static(__dirname + '/public/js'));
+app.use(setLocals);
 
 
 // ************ TEMPLATE ENGINE ************
@@ -48,7 +57,5 @@ app.use('/user', usersRouter);
 
 
 
-app.post('/registro', (req,res)=> {
-    res.redirect('/');
-});
+
 

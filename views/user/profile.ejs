@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apolo</title>
+        <script src="https://kit.fontawesome.com/98eaad93ae.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <%- include("../partial/head.ejs",{cssfile:"register"}) %> <!--cssfile es una variable que va a guardar la hoja de estilo-->
+    </head>
+<body>
+  <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+    <main>
+        <div>
+           
+                <div class="form-name">
+                    <h2>Hi <%= user.name %></h2>
+                </div>
+                <div class="form-surname">
+                    <h3>Apellido: <%= user.lastname %></h3>
+                </div>
+                <div class="form-birth">
+                    <p>Fecha de Nacimiento: <%= user.birthdate %></p>
+                </div>
+                <div class="form-email">
+                    <p>Tu email es: <%= user.email %></p>
+                </div>
+                <div class="form-email">
+                    <p>Tu foto es:</p> <img src="/img/<%= user.image %>"> 
+                </div>
+           
+        </div>
+    </main>
+    <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
+</body>
+</html>

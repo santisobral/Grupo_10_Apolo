@@ -21,6 +21,14 @@ const upload = multer({storage});
 // ************ Configuracion de las rutas ************
 // Devolver todos los productos  
 router.get("/productList",productController.listaDeProductos);
+// Devolver los productos segun su genero
+router.get("/category/:id/",productController.category);
+// Devolver los productos en oferta
+router.get("/sale/:id/",productController.sale);
+// Devolver los productos en temporada
+router.get("/season/:id/",productController.season);
+
+
 router.post("/productList",upload.single("image"),productController.store);
 // Crear un producto
 router.get("/createProduct",productController.crearProducto);

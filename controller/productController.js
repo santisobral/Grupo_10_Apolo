@@ -3,7 +3,7 @@ const path = require("path");
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
- const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 let productController = {
@@ -41,7 +41,8 @@ let productController = {
                 brand: req.body.brand ,
                 size: req.body.size,
                description: req.body.description ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-               image: req.file.filename,
+              //  image: req.file.filename,
+              image: req.file ? req.file.filename : "default-image.jpg",
                sale: req.body.sale ,
         };
         products.push(newProducts);
@@ -65,6 +66,28 @@ let productController = {
           products
         })
        },
+       category: (req,res) => {
+        res.render("product/categoryProduct",{
+          products,
+          category: req.params.id
+        })
+       },
+       sale: (req,res) => {
+        
+
+        res.render("product/saleProduct",{
+          products,
+          sale: req.params.id
+        })
+       },
+       season: (req,res) => {
+        
+
+        res.render("product/newSeasonProduct",{
+          products,
+          season: req.params.id
+        })
+       },
         // ************ (put) editar - Método para editar la info que se envia desde el Formulario y que se almacenara en la base de datos ************
        update: (req, res) => { 
         let id = req.params.id;
@@ -82,8 +105,17 @@ let productController = {
       size: req.body.size,
      description: req.body.description ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
      image: req.file ? req.file.filename: productToEdit.image,// aca estamos preguntando, si existe un archivo queremos que nos traiga el archivo, caso contrario quede el archivo original
-     sale: req.body.sale 
+     sale: req.body.sale,
+     new_season: req.body.newseason
+     
 		}
+    if(req.file) {
+      console.log('viene foto nueva');
+     
+      if(productToEdit.image != 'default-image.jpg') {
+          fs.unlinkSync(path.join(__dirname, '../public/img/'+productToEdit.image))
+      }
+  }
 		//Modificamos el array
 		products.forEach((producto,index) => {
 			if(producto.id == id){
@@ -91,6 +123,7 @@ let productController = {
 			}
 		});
 		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, " "));
+     products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		res.redirect("/product/productList") 
 	},
      // ************ (delete)  - Método para eliminar un producto de la base de datos ************
@@ -103,8 +136,14 @@ let productController = {
          return producto.id != id
 		 
 	  });
+    let imageOld = products.filter(product => product.id == id)
+
+        if(imageOld[0].image != 'default-image.jpg') {
+            fs.unlinkSync(path.join(__dirname, '../public/img/'+imageOld[0].image))
+        }
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null, " "));
+    products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		res.redirect("/product/productList") 
 	}
        
