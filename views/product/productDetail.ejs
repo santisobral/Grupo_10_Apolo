@@ -78,18 +78,23 @@
                   <option value="Otros...">Otros...</option>
                 </select>
               </div>
-              <form class="botom">
-                <button type="submit" title="Agregar al carrito" class="action primary tocart"
+           
+              <a href="/product/productCart">
+                <button  title="Agregar al carrito" class="action primary tocart"
                   id="product-addtocart-button"><span>Agregar al carrito</span>
                 </button>
-              </form>
+              </a>
+              <% if ( locals.loggedUser && locals.loggedUser.category == "adm" ) { %>
               <div class="edit-delete">
               <a href="/product/editProduct/<%= product.id %>" class="botton-form">EDITAR PRODUCTO</a>
 						<form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
 							<button type="submit" class="botton-form">ELIMINAR</button>
 						</form>
           </div>
-            </div>
+          <% } %>
+            
+           
+
           </div>
         </div>
       </div>

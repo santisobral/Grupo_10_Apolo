@@ -17,11 +17,9 @@ let usersController = {
     if (validetEmail) { // Si los email coincide y ademas la password que mandas en el formulario coincide con la base de dato te redirige al profile
       let isOkThePassword = bcryptjs.compareSync(req.body.password, validetEmail.password);
       if (isOkThePassword) {
-        delete validetEmail.password; // es para que no guarde en session la password
+        //delete validetEmail.password; // ESTO ES LO QUE HACE QUE NO ME DEJE LOGUEARME DE NUEVO CUANDO DE ME DESLOGUEO, PREGUNTAR PORQUE
         req.session.userLogged = validetEmail // aca guardas al usuario en session
-        // let userDate = users.find(user => user.email == req.body.email);
-        // let userId = userDate.id
-        // console.log(userDate)
+       
         return res.redirect("/user/profile")
       }
     }

@@ -5,6 +5,7 @@
   "lastname": "Sobral",
   "birthdate": "01-20-90",
   "email": "san@yahoo.com",
+  "category": "adm",
   "password": 12345,
   "image": "img-cafetera-moulinex.jpg"
  },
@@ -14,6 +15,7 @@
   "lastname": "Canellada",
   "birthdate": "01-20-90",
   "email": "Cane@yahoo.com",
+  "category": "adm",
   "password": 12345,
   "image": "img-cafetera-moulinex.jpg"
  },
@@ -23,6 +25,7 @@
   "lastname": "Castro",
   "birthdate": "2021-11-16",
   "email": "emma2411@hotmail.com",
+  "category": "client",
   "password": "$2a$10$nIXCpI3ViQzbWCO6A2d4OeHLOUUhDGkbxCEMhoOg8vnhgHj10.B/2",
   "image": "1637091954407Avatar.jpg"
  },
@@ -32,16 +35,9 @@
   "lastname": "Castro",
   "birthdate": "2021-11-16",
   "email": "martincastro88@hotmail.com",
+  "category": "adm",
   "password": "$2a$10$.DmG6clBMdKYL1PZlh7ViuMesiKc3.jE6skQmKYib1WfadgT34c2W",
   "image": "1637109368261Avatar.jpg"
- },
- {
-  "id": 5,
-  "name": "Tincho",
-  "lastname": "Castro",
-  "birthdate": "2021-11-16",
-  "email": "tincho88@hotmail.com",
-  "password": "$2a$10$xXYozKM2TLeSl5z3SeIISu9uPu8MQnreA8LBh.PzgzOWdq/qkb4i2",
-  "image": "1637109970739Avatar.jpg"
  }
+ 
 ]

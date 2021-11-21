@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const multer = require("multer");
 
+const loggedMiddleware = require("../middlewares/loggedMiddleware"); // es un middlewares a nivel de ruta
+
 
 // ************ Requiero la funcionalidad del controlador ************
 let productController = require("../controller/productController");
@@ -43,7 +45,7 @@ router.delete("/delete/:id",productController.destroy)
 
 
 
-router.get("/productCart",productController.carrito);
+router.get("/productCart",loggedMiddleware,productController.carrito);
 
 
 

@@ -4,6 +4,8 @@ const multer = require("multer");
 
 let usersController = require("../controller/usersController");
 const guestMiddlewares = require("../middlewares/gustMiddlewares"); // es un middlewares a nivel de ruta
+const loggedMiddleware = require("../middlewares/loggedMiddleware"); // es un middlewares a nivel de ruta
+
 
 const storage = multer.diskStorage({
     destination: function(req ,file,cb) {
@@ -24,7 +26,7 @@ router.get("/register",guestMiddlewares ,usersController.register);
 router.post("/register",upload.single("image"), usersController.saveUsers);
 
 // Devuelve la vista del profile
- router.get("/profile",usersController.profile)
+ router.get("/profile",loggedMiddleware,usersController.profile)
 //Logout
  router.get("/logout",usersController.logout);
 
