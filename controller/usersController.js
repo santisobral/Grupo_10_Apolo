@@ -19,6 +19,10 @@ let usersController = {
       if (isOkThePassword) {
         //delete validetEmail.password; // ESTO ES LO QUE HACE QUE NO ME DEJE LOGUEARME DE NUEVO CUANDO DE ME DESLOGUEO, PREGUNTAR PORQUE
         req.session.userLogged = validetEmail // aca guardas al usuario en session
+
+        if(req.body.rememberMe){
+          res.cookie("userEmail",req.body.email,{ maxAge: (1000 * 60) *60 })
+        }
        
         return res.redirect("/user/profile")
       }
@@ -55,6 +59,7 @@ let usersController = {
     return res.redirect("/user/login") // si la persona se registro existosamente te lo manda al login
   },
   profile: (req, res) => {
+    console.log(req.cookies.userEmail);
     return res.render("user/profile", {
       user: req.session.userLogged
     })

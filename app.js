@@ -2,6 +2,7 @@ let express = require("express");
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require("express-session");
 const setLocals = require('./middlewares/setLocals.js');     //-> Guarda en locals la info del usuario en session
+const cookies = require("cookie-parser");
 
 let app = express();
 
@@ -24,6 +25,7 @@ app.use(session({
    resave: false,
    saveUninitialized: false,
 }));
+app.use(cookies());
 // es para poder trabajar con el Json
 app.use(express.json());
 // Para poder usar los métodos PUT y DELETE

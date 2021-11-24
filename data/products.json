@@ -1,19 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "Pelota Adidas",
-  "price": "6999",
-  "discount": "10",
-  "gender": "Hombre",
-  "category": "pelota",
-  "brand": ".",
-  "size": "L",
-  "description": "Pelota Adidas Futbol Conect 21",
-  "image": "pelota-adidas.jpg",
-  "sale": "on",
-  "new_season": "on"
- },
- {
   "id": 2,
   "name": "Pelota Penalty",
   "price": "7500",
