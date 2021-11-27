@@ -8,14 +8,14 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 module.exports = (req, res, next) => {
     res.locals.loggedUser = false;
 
-    let emailInCookie = req.cookies.userEmail;
+    let emailInCookie = req.cookies.userEmail; // Aca estas llamando a la cookie que viene del body al tildar el remermberMe
     let userCookie = users.find(user=>{
      return user.email ==emailInCookie
     });
-    console.log(userCookie)
+    
 
     if(userCookie){
-        req.session.userLogged == userCookie
+        req.session.userLogged = userCookie
     }
 
 

@@ -3,6 +3,8 @@ var router = express.Router();
 const multer = require("multer");
 
 let usersController = require("../controller/usersController");
+const validations = require("../middlewares/validatRegisterMiddlewares");
+
 const guestMiddlewares = require("../middlewares/gustMiddlewares"); // es un middlewares a nivel de ruta
 const loggedMiddleware = require("../middlewares/loggedMiddleware"); // es un middlewares a nivel de ruta
 
@@ -23,7 +25,7 @@ router.post("/login",usersController.userProcess);
 
 // Devolver el formulario de register
 router.get("/register",guestMiddlewares ,usersController.register);
-router.post("/register",upload.single("image"), usersController.saveUsers);
+router.post("/register",upload.single("image"),validations, usersController.saveUsers);
 
 // Devuelve la vista del profile
  router.get("/profile",loggedMiddleware,usersController.profile)

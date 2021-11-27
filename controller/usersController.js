@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require('fs');
 const bcryptjs = require("bcryptjs");
+const {validationResult} = require("express-validator");
 
 const usersFilePath = path.join(__dirname, '../data/user.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -37,6 +38,15 @@ let usersController = {
     res.render("user/register")
   },
   saveUsers: (req, res) => {
+    const resultValidation = validationResult(req);
+    console.log(resultValidation.mapped()) 
+    if(resultValidation.errors.length > 0) { // si es mayor a cero es porque hay errores
+        return res.render("user/register",{
+            errors:resultValidation.mapped(),
+            oldData: req.body
+
+        })
+    }
     let validationEmail = users.find(user => { // aca te busca el email que viene por url y te lo compara con el email de la base de datos
       return user.email == req.body.email
     });
@@ -59,7 +69,6 @@ let usersController = {
     return res.redirect("/user/login") // si la persona se registro existosamente te lo manda al login
   },
   profile: (req, res) => {
-    console.log(req.cookies.userEmail);
     return res.render("user/profile", {
       user: req.session.userLogged
     })

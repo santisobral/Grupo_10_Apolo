@@ -18,24 +18,64 @@
         <section class="box-form-register">
             <form action="/user/register" method="POST" class="form-register" enctype="multipart/form-data">
                 <div class="form-name">
-                    <input type="text" name="name" placeholder="Nombre">
+                    <input type="text" name="name" placeholder="Nombre"
+                    class="form-name <%= locals.errors && errors.name ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.name :null %>"> <!--NO ME SALIO-->
+                    <% if (locals.errors && errors.name){ %> 
+                    <div class="text-danger">
+                        <%= errors.name.msg %> 
+                    </div>
+                    <% } %> 
                 </div>
                 <div class="form-surname">
-                    <input type="text" name="lastname" placeholder="Apellido">
+                    <input type="text" name="lastname" placeholder="Apellido"
+                    class="form-name <%= locals.errors && errors.lastname ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.lastname :null %>"> <!--NO ME SALIO-->
+                    <% if (locals.errors && errors.lastname){ %> 
+                    <div class="text-danger">
+                        <%= errors.lastname.msg %> 
+                    </div>
+                    <% } %> 
                 </div>
                 <div class="form-birth">
-                    <label for="">Fecha de Nacimiento</label>
-                    <input type="date" name="birthdate">
+                   
+                    <input type="date" name="birthdate" placeholder="Fecha de Nacimiento"
+                    class="form-name <%= locals.errors && errors.birthdate ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.birthdate :null %>"> <!--NO ME SALIO-->
+                    <% if (locals.errors && errors.birthdate){ %> 
+                    <div class="text-danger">
+                        <%= errors.birthdate.msg %> 
+                    </div>
+                    <% } %> 
                 </div>
                 <div class="form-email">
-                    <input type="email" name="email" placeholder="Correo Electrónico">
+                    <input type="text" name="email" placeholder="Correo Electrónico"
+                    class="form-name <%= locals.errors && errors.email ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.email :null %>">
+                    <% if (locals.errors && errors.email){ %> 
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                        <% } %> 
                 </div>
                 <div class="form-pass">
-                    <input type="password" name="password" placeholder="Contraseña">
+                    <input type="password" name="password" placeholder="Contraseña"
+                    class="form-name <%= locals.errors && errors.password ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.password :null %>">
+                    <% if (locals.errors && errors.password){ %> 
+                        <div class="text-danger">
+                            <%= errors.password.msg %> 
+                        </div>
+                        <% } %> 
                 </div>
                 <div class="control-formulario">
                     <label>Foto del Producto:</label>
                     <input type="file" name="image" placeholder="IMAGEN" class="control">
+                    <% if (locals.errors && errors.image){ %> 
+                        <div class="text-danger">
+                            <%= errors.image.msg %> 
+                        </div>
+                        <% } %> 
                   </div>
                 <button class="register-button" type="submit">Registrarse</button>
             </form>

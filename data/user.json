@@ -38,6 +38,14 @@
   "category": "adm",
   "password": "$2a$10$.DmG6clBMdKYL1PZlh7ViuMesiKc3.jE6skQmKYib1WfadgT34c2W",
   "image": "1637109368261Avatar.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Cliente",
+  "lastname": "Usuario",
+  "birthdate": "2021-11-27",
+  "email": "cliente@hotmail.com",
+  "password": "$2a$10$PhRkUEppiuKvL6KdR4bUJe0orFOV0/Ywpw/tEv6.n6S5nuqxyecUe",
+  "image": "1638021013761avatar-mujer.jpg"
  }
- 
 ]
