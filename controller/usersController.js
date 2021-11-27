@@ -74,6 +74,7 @@ let usersController = {
     })
   },
   logout: function (req, res) {
+    res.clearCookie("userEmail");// aca se destruye la cookie y te permite desloguearte
     req.session.destroy()// Esto lo que hace es borrar todo lo que esta en sesion, tenes que volver a loguearte
     return res.redirect("/")
   }
