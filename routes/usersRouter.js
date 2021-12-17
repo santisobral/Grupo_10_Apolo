@@ -26,6 +26,9 @@ router.post("/login",usersController.userProcess);
 // Devolver el formulario de register
 router.get("/register",guestMiddlewares ,usersController.register);
 router.post("/register",upload.single("image"),validations, usersController.saveUsers);
+// Devolver el formulario de edicion
+router.get("/userEdit/:id",usersController.edit);
+router.put("/userEdit/:id",upload.single("image"),usersController.userUpdate);
 
 // Devuelve la vista del profile
  router.get("/profile",loggedMiddleware,usersController.profile)

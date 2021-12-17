@@ -24,24 +24,21 @@
    <main>
     
      <section class="seccion-lista-productos">
-      <h1 class="titulo-productos">Productos en Oferta </h1>
+      <h1 class="titulo-productos">Busqueda de Producto</h1>
        <div class="listaProductos"> 
          <% products.forEach(producto => {%>
-           
-                <article class="producto">
-                    <a href="/product/productDetail/<%= producto.id %>" class="product-content">
-                        <div class="producto-img-box">
-                            <img src="/img/<%=producto.image %>" alt="" class="imgProduct">
-                        </div>
-                        <div class="detalle">
-                            <p>$<%=producto.price %></p>
-                            <p><%=producto.discount %> % off</p>
-                            <h3 class="descripcionArticulo"><%=producto.description %></h3>
-                        </div>
-                        </a>
-                    </article>
-         
-            
+         <article class="producto">
+           <a href="/product/productDetail/<%= producto.id %>" class="product-content">
+              <div class="producto-img-box">
+                <img src="/img/<%=producto.image %>" alt="" class="imgProduct">
+              </div>
+              <div class="detalle">
+                <p>$<%=producto.price %></p>
+                <p><%=producto.discount %> % off</p>
+                <h3 class="descripcionArticulo"><%=producto.description %></h3>
+              </div>
+            </a>
+         </article>
          <% }) %>
         </div>
       </section>

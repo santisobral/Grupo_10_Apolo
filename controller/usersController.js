@@ -1,83 +1,119 @@
-const path = require("path");
-const fs = require('fs');
+const db = require("../database/models");
+
 const bcryptjs = require("bcryptjs");
-const {validationResult} = require("express-validator");
-
-const usersFilePath = path.join(__dirname, '../data/user.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
+const { validationResult } = require("express-validator");
 
 let usersController = {
   login: (req, res) => {
-    res.render("user/login")
+    res.render("user/login");
   },
   userProcess: (req, res) => {
-    let validetEmail = users.find(user => { // aca te busca el email que viene por url y te lo compara con el email de la base de datos
-      return user.email == req.body.email
-    });
-    if (validetEmail) { // Si los email coincide y ademas la password que mandas en el formulario coincide con la base de dato te redirige al profile
-      let isOkThePassword = bcryptjs.compareSync(req.body.password, validetEmail.password);
-      if (isOkThePassword) {
-        //delete validetEmail.password; // ESTO ES LO QUE HACE QUE NO ME DEJE LOGUEARME DE NUEVO CUANDO DE ME DESLOGUEO, PREGUNTAR PORQUE
-        req.session.userLogged = validetEmail // aca guardas al usuario en session
-
-        if(req.body.rememberMe){
-          res.cookie("userEmail",req.body.email,{ maxAge: (1000 * 60) *60 })
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    }).then((validetEmail) => {
+      if (validetEmail) {
+        let isOkThePassword = bcryptjs.compareSync(
+          req.body.password,
+          validetEmail.pass
+        ); // estamos comparando la contraseña que se envia desde el form con la que esta en la db
+        console.log(isOkThePassword);
+        console.log(req.body.password);
+        if (isOkThePassword) {
+          req.session.userLogged = validetEmail; // aca guardas al usuario en session
+          if (req.body.rememberMe) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+          }
+          return res.redirect("/user/profile");
         }
-       
-        return res.redirect("/user/profile")
       }
-    }
-    res.render("user/login", { // caso contrario te manda de nuevo al login
-      users
-    })
+      // caso contrario te manda de nuevo al login
+      res.render("user/login");
+    });
   },
   // (get) Create - Formulario para crear un usuario
   register: (req, res) => {
-
-    res.render("user/register")
+    res.render("user/register");
   },
   saveUsers: (req, res) => {
     const resultValidation = validationResult(req);
-    console.log(resultValidation.mapped()) 
-    if(resultValidation.errors.length > 0) { // si es mayor a cero es porque hay errores
-        return res.render("user/register",{
-            errors:resultValidation.mapped(),
-            oldData: req.body
-
-        })
+    console.log(resultValidation.mapped());
+    if (resultValidation.errors.length > 0) {
+      // si es mayor a cero es porque hay errores
+      return res.render("user/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     }
-    let validationEmail = users.find(user => { // aca te busca el email que viene por url y te lo compara con el email de la base de datos
-      return user.email == req.body.email
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    }).then((validationEmail) => {
+      if (validationEmail) {
+        // Si los email coincide no te deja avanzar
+        return res.render("user/register");
+      }
+      db.User.create({
+        name: req.body.name, // aca vamos a guardar a la info que viene de el form de cracion del usuario. Es un objeto literal con la propiedad y su valor
+        lastname: req.body.lastname,
+        birthdate: req.body.birthdate,
+        email: req.body.email,
+        pass: bcryptjs.hashSync(req.body.password, 10), // aca mandamos la contraseña hasheada
+        role_id: 2,
+        avatar: req.file.filename,
+        deleted: 0,
+      });
     });
-    console.log(validationEmail)
-    if (validationEmail) { // Si los email coincide no te deja avanzar
-      return res.render("user/register")
-    };
-    let userId = users[users.length - 1].id + 1;
-    let newUsers = { // aca estamos creando el producto, pero no lo estamos guardando en el json, para eso lo hacemos en la fila
-      id: userId, // Este campo no llega desde el form, dado que el usuario no elige este numero
-      name: req.body.name,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      lastname: req.body.lastname,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      birthdate: req.body.birthdate,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      email: req.body.email,
-      password: bcryptjs.hashSync(req.body.password, 10),// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      image: req.file.filename,
-    };
-    users.push(newUsers);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-    return res.redirect("/user/login") // si la persona se registro existosamente te lo manda al login
+
+    return res.redirect("/user/login"); // si la persona se registro existosamente te lo manda al login
+  },
+  // Traemos el formulario de edicion
+  edit: (req, res) => {
+    let movieId = req.params.id;
+    console.log(movieId);
+    db.User.findByPk(movieId).then((user) => {
+      return res.render("user/userEdit", {
+        user,
+      });
+    });
+  },
+  // Actualizamos la informacion del usuario
+  userUpdate: async (req, res) => {
+    try {
+      let editUser = await db.User.findOne({
+        // aca no te deja avanzar hasta que la variable reciba el dato de la db
+        where: {
+          id: req.params.id,
+        },
+      });
+      await db.User.update(
+        {
+          ...req.body, // spread operator
+          avatar: req.file ? req.file.filename : editUser.avatar,
+          deleted: 0,
+        },
+        {
+          where: { id: req.params.id },
+        }
+      );
+      res.redirect("/user/profile");
+    } catch (error) {
+      console.log(error);
+      res.send("error");
+    }
   },
   profile: (req, res) => {
     return res.render("user/profile", {
-      user: req.session.userLogged
-    })
+      user: req.session.userLogged,
+    });
   },
   logout: function (req, res) {
-    res.clearCookie("userEmail");// aca se destruye la cookie y te permite desloguearte
-    req.session.destroy()// Esto lo que hace es borrar todo lo que esta en sesion, tenes que volver a loguearte
-    return res.redirect("/")
-  }
-}
+    res.clearCookie("userEmail"); // aca se destruye la cookie y te permite desloguearte
+    req.session.destroy(); // Esto lo que hace es borrar todo lo que esta en sesion, tenes que volver a loguearte
+    return res.redirect("/");
+  },
+};
 
-module.exports = usersController
+module.exports = usersController;

@@ -63,20 +63,15 @@
             <div class="talle2">
               <div class="box-box-lista">
                 <label class="box-lista" class="talle2"><b>Talle</b></label>
-                <select class="lista" name="talle" class="control">
-                  <option value="...Niño">...Niño</option>
-                  <option value="35">35</option>
-                  <option value="36">36</option>
-                  <option value="37">37</option>
-                  <option value="38">38</option>
-                  <option value="39">39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                  <option value="43">43</option>
-                  <option value="44">44</option>
-                  <option value="Otros...">Otros...</option>
-                </select>
+                <p>
+                  <select name="size_id">
+                   <option value="" disabled selected>Elegir Talle</option>
+                   <% sizes.forEach(size => { %>
+                   <option value="<%= size.id %>"><%= size.size %> </option> <!--El id de genres es lo que se guarda cuando se envia el form de crear pelicula y es el dato que 
+                  necesitas que se guarde dado que esta relacionado con la tabla generos-->
+                   <% }) %>
+                  </select>
+              </p>
               </div>
            
               <a href="/product/productCart">
@@ -84,7 +79,7 @@
                   id="product-addtocart-button"><span>Agregar al carrito</span>
                 </button>
               </a>
-              <% if ( locals.loggedUser && locals.loggedUser.category == "adm" ) { %>
+              <% if ( locals.loggedUser && locals.loggedUser.role_id == 1 ) { %>
               <div class="edit-delete">
               <a href="/product/editProduct/<%= product.id %>" class="botton-form">EDITAR PRODUCTO</a>
 						<form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">

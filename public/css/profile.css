@@ -196,6 +196,18 @@ width: 50%;
     max-width: 100%;
     border-radius: 50%;
 }
+.button-conteiner{
+    margin-top: 10px;
+    text-align: center;  
+}
+.edit-button{
+    background-color: #FCEADE;
+    padding: 5px;
+    border: none;
+}
+.edit-button button{
+    border: none;
+}
 
 /* footer */
 .footer{

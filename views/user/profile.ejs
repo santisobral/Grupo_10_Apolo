@@ -26,11 +26,15 @@
             <div class="form-email">
                 <p>Email: <%= user.email %></p>
             </div>
+            <div class="button-conteiner">
+            <a href="/user/userEdit/<%= user.id %>" class="edit-button">
+                <button> Editar Perfil</button> 
+            </a>
+           </div>
         </div>
+       
         <div class="box-avatar">
-
-                <img class="img-avatar" src="/img/<%= user.image %>"> 
-
+            <img class="img-avatar" src="/img/<%= user.avatar %>"> 
         </div>
 
     </div>

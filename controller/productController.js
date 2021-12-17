@@ -1,157 +1,190 @@
-const fs = require('fs');
+const db = require("../database/models");
+
+const fs = require("fs");
 const path = require("path");
 
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
- let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const productsFilePath = path.join(__dirname, "../data/products.json");
+let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 let productController = {
-    carrito: (req, res) => {
-     
-     res.render("product/productCart")
-    },
-    // Le vamos a enviar solo un producto a la vista
-    detalle: (req, res) => {
-      const product = products.find(producto =>{
-        return producto.id == req.params.id
-     });
-     
-  
-       res.render("product/productDetail",{
-         product
-       })
+  carrito: (req, res) => {
+    res.render("product/productCart");
+  },
+  // Le vamos a enviar solo un producto a la vista
+  detalle: (req, res) => {
+    let promDetail = db.Product.findByPk(req.params.id);
+    let promSizes = db.Size.findAll();
+    Promise.all([promDetail, promSizes])
+      .then(([product, sizes]) => {
+        res.render("product/productDetail", {
+          product,
+          sizes,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  // (get) Create - Formulario para crear
+  crearProducto: (req, res) => {
+    let promCategories = db.Category.findAll();
+    let promSizes = db.Size.findAll();
+    Promise.all([promCategories, promSizes]).then(([categories, sizes]) => {
+      return res.render("product/createProduct", { categories, sizes });
+    });
+  },
+  // ************ (post) Create - Método para guardar la info ************
+  store: (req, res) => {
+    db.Product.create({
+      id: req.params.id,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      brand: req.body.brand,
+      size_id: req.body.size_id,
+      category_id: req.body.category_id,
+      discount: req.body.discount,
+      image: req.file ? req.file.filename : "default-image.jpg",
+      gender: req.body.gender,
+      deleted: 0,
+    })
+      .then(() => {
+        // el then no lleva parametro porque no estas esperando nada de la base de datos x qu estas creando una pelicula
+        res.redirect("/product/productList");
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  // ************ (Get) editar un producto - Método que nos trae la vista del formulario para editar un producto ************
+  editarProducto: (req, res) => {
+    let productId = req.params.id;
+    let promEdit = db.Product.findByPk(productId, {
+      include: [{ association: "category" }, { association: "size" }],
+    });
+    let promSizes = db.Size.findAll();
+    let promCategories = db.Category.findAll();
+    Promise.all([promEdit, promSizes, promCategories]) // si tengo mas de una promesa y quiero esperar a tener estas 2 promesas, tengo que poner el Peomise.all
+      .then(([product, sizes, categories]) => {
+        return res.render("product/editProduct", {
+          product,
+          sizes,
+          categories,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  // ************ (get)  - Método para devolver la lista de productos ************
+  listaDeProductos: (req, res) => {
+    db.Product.findAll() // db es la base de datos y Product es el alias del modelo Product
+      .then((products) => {
+        res.render("product/productList", { products });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  category: (req, res) => {
+    db.Product.findAll()
+      .then((products) => {
+        res.render("product/categoryProduct", {
+          products,
+          category: req.params.id,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  // Barra de busqueda que filtra segun el nombre y con el like buscas por palabras en la base de datos
+  search: (req, res) => {
+    db.Product.findAll({
+      where: {
+        name: {
+          [db.Sequelize.Op.like]: "%" + req.body.searching + "%", // aca el req.body.searching va fuera de las comillas porque es una variable
+          // que trae de forma dinamica lo que pones en barra de busqueda
+        },
       },
-      // (get) Create - Formulario para crear
-      crearProducto: (req, res) => {
-       
-  
-        res.render("product/createProduct")
-       },
-        // ************ (post) Create - Método para guardar la info ************
-       store: (req, res) => {
-       
-        let newProducts = { // aca estamos creando el producto, pero no lo estamos guardando en el json, para eso lo hacemos en la fila
-          id: products[products.length - 1].id + 1, // Este campo no llega desde el form, dado que el usuario no elige este numero
-                name: req.body.name ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-                price: req.body.price,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-                discount: req.body.discount ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-                gender:  req.body.gender,
-                category: req.body.category ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-                brand: req.body.brand ,
-                size: req.body.size,
-               description: req.body.description ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-              //  image: req.file.filename,
-              image: req.file ? req.file.filename : "default-image.jpg",
-               sale: req.body.sale ,
-        };
-        products.push(newProducts);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products,null, " "));
-        
-        res.redirect("/product/productList")
-       },
-        // ************ (Get) editar un producto - Método que nos trae la vista del formulario para editar un producto ************
-       editarProducto: (req, res) => {
-        const product = products.find(producto =>{
-          return producto.id == req.params.id
-       });
-  
-        res.render("product/editProduct", {product})
-       },
-        // ************ (get)  - Método para devolver la lista de productos ************
-       listaDeProductos: (req, res) => { // Porque funciona sin el find, al ir desde una img de productList a productDetail
-        
-  
-        res.render("product/productList",{
-          products
-        })
-       },
-       category: (req,res) => {
-        res.render("product/categoryProduct",{
+    })
+      .then((products) => {
+        res.render("product/searchProducts", {
           products,
-          category: req.params.id
-        })
-       },
-       sale: (req,res) => {
-        
-
-        res.render("product/saleProduct",{
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  // Nos muestra los productos en oferta
+  sale: (req, res) => {
+    let productToFilter = 10; // en esta variable decidimos a partir de que porcentaje se considera en oferta
+    db.Product.findAll({
+      where: {
+        discount: { [db.Sequelize.Op.gte]: productToFilter }, // aca queremos que nos filtre cuando el descuento es >= a 10
+      },
+    })
+      .then((products) => {
+        res.render("product/saleProduct", {
           products,
-          sale: req.params.id
-        })
-       },
-       season: (req,res) => {
-        
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send("error");
+      });
+  },
+  season: (req, res) => {
+    res.render("product/newSeasonProduct", {
+      products,
+      season: req.params.id,
+    });
+  },
+  // ************ (put) editar - Método para editar la info que se envia desde el Formulario y que se almacenara en la base de datos ************
+  update: (req, res) => {
+    db.Product.findByPk(req.params.id)
 
-        res.render("product/newSeasonProduct",{
-          products,
-          season: req.params.id
-        })
-       },
-        // ************ (put) editar - Método para editar la info que se envia desde el Formulario y que se almacenara en la base de datos ************
-       update: (req, res) => { 
-        let id = req.params.id;
-		let productToEdit = products.find(product =>{ // aca te busca el id que viene por url pero del array original
-			return product.id == id
-		});
-		let editProducts = { 
-			id: id, // aca en la propiedad id tenemos guardado el id que viene por url de la fila 73
-      name: req.body.name ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      price: req.body.price,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      discount: req.body.discount ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      gender:  req.body.gender,
-      category: req.body.category ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-      brand: req.body.brand ,
-      size: req.body.size,
-     description: req.body.description ,// aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
-     image: req.file ? req.file.filename: productToEdit.image,// aca estamos preguntando, si existe un archivo queremos que nos traiga el archivo, caso contrario quede el archivo original
-     sale: req.body.sale,
-     new_season: req.body.newseason
-     
-		}
-    if(req.file) {
-      console.log('viene foto nueva');
-     
-      if(productToEdit.image != 'default-image.jpg') {
-          fs.unlinkSync(path.join(__dirname, '../public/img/'+productToEdit.image))
-      }
-  }
-		//Modificamos el array
-		products.forEach((producto,index) => {
-			if(producto.id == id){
-				products[index] = editProducts
-			}
-		});
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, " "));
-     products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.redirect("/product/productList") 
-	},
-     // ************ (delete)  - Método para eliminar un producto de la base de datos ************
-	destroy : (req, res) => {
-		// Eliminamos el producto que llegó por parametro su ID
-		//res.send("Producto con id " + req.params.id + " eliminado!")
-      let id = req.params.id;
-	  // Modificamos el array
-	  let finalProducts = products.filter(producto =>{
-         return producto.id != id
-		 
-	  });
-    let imageOld = products.filter(product => product.id == id)
+      .then((product) => {
+        db.Product.update(
+          {
+            // en todos los campos debe coincidir el name del form de editar menos en la imagen ya que lo trae de la base de datos
+            id: req.params.id,
+            name: req.body.name, // aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
+            description: req.body.description, // aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
+            price: req.body.price, // aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
+            brand: req.body.brand,
+            size_id: req.body.size_id,
+            category_id: req.body.category_id, // aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
+            discount: req.body.discount, // aca vamos a guardar a la info que viene de el form de cracion del producto. Es un objeto literal con la propiedad y su valor
+            image: req.file ? req.file.filename : product.image,
+            gender: req.body.gender,
+            deleted: 0,
+          },
+          {
+            where: { id: req.params.id },
+          }
+        );
+      })
+      .then(() => {
+        // aca se pone el then porque una vez que se actualiza la base de datos recien ahi te va dejar continuar y hacer el redirect
+        res.redirect("/product/productList");
+      });
+  },
+  // ************ (delete)  - Método para eliminar un producto de la base de datos ************
+  destroy: (req, res) => {
+    db.Product.destroy({
+      where: { id: req.params.id },
+    }).then(() => {
+      res.redirect("/product/productList");
+    });
+  },
+};
 
-        if(imageOld[0].image != 'default-image.jpg') {
-            fs.unlinkSync(path.join(__dirname, '../public/img/'+imageOld[0].image))
-        }
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts,null, " "));
-    products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.redirect("/product/productList") 
-	}
-       
-       
-     
-
-}
-
-module.exports = productController
-
-
+module.exports = productController;

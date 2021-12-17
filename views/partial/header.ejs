@@ -22,12 +22,15 @@
             <li><a href="/product/category/Mujer"> MUJERES</a></li>
           <li><a  href="/product/productList">TODOS LOS PRODUCTOS</a></li>
           <li><a href="/product/sale/on"> OFERTAS</a></li>
-          <li><a href="/product/createProduct">CREAR PRODUCTO</a></li>
           <% if(locals && locals.loggedUser){ %>
+            <% if ( locals.loggedUser.role_id == 1 ) { %>
+          <li><a href="/product/createProduct">CREAR PRODUCTO</a></li>
+          <% } %>
+            
             <li><a href="/user/profile">HI <%= locals.loggedUser.name %>  </a></li>
             <li><a href="/user/logout">LOGOUT</a></li>
          <% } %> 
-         <li><a href="#">LOGOUT</a></li>
+         
           </ul>  
         </div>
         <a href="/">
@@ -36,9 +39,9 @@
           </div>
         </a>
         <div class="box-3">
-          <form>
+          <form action="/product/search" method="POST" class="create-form">
             <div class="barra">
-              <input type="text" nombre="search-bar" placeholder="Que estas buscando?" class="search-bar-bar">
+              <input type="text" name="searching" placeholder="Que estas buscando?" class="search-bar-bar">
               <button type="submit" class="botton-form-login"><i class="fas fa-search"></i></button>
             </div>
           </form>
@@ -61,7 +64,7 @@
           <li><a href="/product/productList">TODOS LOS PRODUCTOS</a></li>
           <li><a href="/product/sale/on">OFERTAS</a></li>
           <% if(locals && locals.loggedUser){ %> <!--Si tengo a alguien es session que recien ahi me muestre el perfil y el logout-->
-            <% if ( locals.loggedUser.category == "adm" ) { %>
+            <% if ( locals.loggedUser.role_id == 1 ) { %>
               <li><a href="/product/createProduct">CREAR PRODUCTO</a></li>
             <% } %>
            

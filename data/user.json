@@ -1,36 +1,6 @@
 [
  {
   "id": 1,
-  "name": "Santiago",
-  "lastname": "Sobral",
-  "birthdate": "01-20-90",
-  "email": "san@yahoo.com",
-  "category": "adm",
-  "password": 12345,
-  "image": "img-cafetera-moulinex.jpg"
- },
- {
-  "id": 2,
-  "name": "Emiliano",
-  "lastname": "Canellada",
-  "birthdate": "01-20-90",
-  "email": "Cane@yahoo.com",
-  "category": "adm",
-  "password": 12345,
-  "image": "img-cafetera-moulinex.jpg"
- },
- {
-  "id": 3,
-  "name": "Emma",
-  "lastname": "Castro",
-  "birthdate": "2021-11-16",
-  "email": "emma2411@hotmail.com",
-  "category": "client",
-  "password": "$2a$10$nIXCpI3ViQzbWCO6A2d4OeHLOUUhDGkbxCEMhoOg8vnhgHj10.B/2",
-  "image": "1637091954407Avatar.jpg"
- },
- {
-  "id": 4,
   "name": "Martin",
   "lastname": "Castro",
   "birthdate": "2021-11-16",
@@ -40,12 +10,30 @@
   "image": "1637109368261Avatar.jpg"
  },
  {
-  "id": 5,
+  "id": 2,
   "name": "Cliente",
   "lastname": "Usuario",
   "birthdate": "2021-11-27",
   "email": "cliente@hotmail.com",
   "password": "$2a$10$PhRkUEppiuKvL6KdR4bUJe0orFOV0/Ywpw/tEv6.n6S5nuqxyecUe",
   "image": "1638021013761avatar-mujer.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Santiago",
+  "lastname": "Sobral",
+  "birthdate": "1992-06-06",
+  "email": "santiago@gmail.com",
+  "password": "$2a$10$zt2DU4D/uhT4v5EfXXvNquytl6MHYA8Qo7DCADPCiqrc8xg7yTPxq",
+  "image": "1638816061312Avatar.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Emiliano",
+  "lastname": "Canellada",
+  "birthdate": "1999-07-06",
+  "email": "emiliano@gmail.com",
+  "password": "$2a$10$0NsMjXXXdg4z61jJsvdwxeLmUtULB37gL/pXt.Y6L0xHbfSx/IibK",
+  "image": "1638816527676Avatar.jpg"
  }
 ]

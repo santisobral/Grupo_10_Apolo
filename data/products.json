@@ -1,5 +1,5 @@
 [
-{
+ {
   "id": "1",
   "name": "Pelota Adidas",
   "price": "6999",
@@ -167,17 +167,16 @@
   "new_season": "true"
  },
  {
-  "id": 13,
-  "name": "peppe         ",
-  "price": "2000         ",
-  "discount": "",
+  "id": "13",
+  "name": "Short Kappa Racing",
+  "price": "4099     ",
+  "discount": "10",
   "gender": "Hombre",
   "category": "botines",
   "brand": "Adidas",
-  "size": "Small",
-  "description": "peppe",
-  "image": "1636574573878short-de-racing.jpg",
-  "sale": "on"
+  "size": "Large",
+  "description": "Short de Racing Kappa Entrenamiento Petroleo",
+  "image": "1636574573878short-de-racing.jpg"
  },
  {
   "id": 14,
@@ -229,5 +228,104 @@
   "description": "Short Reves Olav Mujer",
   "image": "1636673118408short-mujer.jpg",
   "sale": "on"
+ },
+ {
+  "id": 18,
+  "name": "Medias Pumas",
+  "price": "1050",
+  "discount": "10",
+  "gender": "Hombre",
+  "category": "botines",
+  "brand": "Puma",
+  "size": "Large",
+  "description": "Medias De Futbol Puma Team Final 21",
+  "image": "1638725302214medias-pumas.jpg",
+  "sale": "on"
+ },
+ {
+  "id": 19,
+  "name": "Media Futbol Mujer",
+  "price": "1140",
+  "discount": "5",
+  "gender": "Mujer",
+  "category": "botines",
+  "brand": "under armour",
+  "size": "Small",
+  "description": "Media De futbol Mujer Topper",
+  "image": "1638725801770media-mujer-topper.jpg"
+ },
+ {
+  "id": "20",
+  "name": "Guantes Adidas Mujer ",
+  "price": "6999 ",
+  "discount": "",
+  "gender": "Hombre",
+  "category": "botines",
+  "brand": "Adidas",
+  "size": "Small",
+  "description": "Guante de Arquero Adidas Predator Unisex Blanco",
+  "image": "1638727000071guante-arquero-predator.jpg"
+ },
+ {
+  "id": 21,
+  "name": "Camiseta Boca Mujer",
+  "price": "10555",
+  "discount": "5",
+  "gender": "Mujer",
+  "category": "remeras",
+  "brand": "Adidas",
+  "size": "Small",
+  "description": "Camiseta De Boca Oficial Adidas Azul",
+  "image": "1638727336557Camiseta-boca-mujer.jpg"
+ },
+ {
+  "id": 22,
+  "name": "Camiseta River Mujer",
+  "price": "10555",
+  "discount": "10",
+  "gender": "Mujer",
+  "category": "remeras",
+  "brand": "Adidas",
+  "size": "Small",
+  "description": "Camiseta De River Oficial Adidas Blanca",
+  "image": "1638730562987camiseta-river-mujer.jpg",
+  "sale": "on"
+ },
+ {
+  "id": 23,
+  "name": "Canillera de Futbol Topper",
+  "price": "2599",
+  "discount": "15",
+  "gender": "Hombre",
+  "category": "botines",
+  "brand": "under armour",
+  "size": "Large",
+  "description": "Canillera De Futbol Topper Titanium Azul",
+  "image": "1638730835034canillera-de-futbol-topper.jpg",
+  "sale": "on"
+ },
+ {
+  "id": 24,
+  "name": "Canillera de Futbol Umbro",
+  "price": "2445",
+  "discount": "5",
+  "gender": "Mujer",
+  "category": "botines",
+  "brand": "Reebok",
+  "size": "Small",
+  "description": "Canilleras De Futbol Umbro Neo Minimius Blanca",
+  "image": "1638731163227canilleras-de-futbol-umbro-mujer.jpg"
+ },
+ {
+  "id": 25,
+  "name": "Gorra Puma",
+  "price": "3299",
+  "discount": "5",
+  "gender": "Hombre",
+  "category": "botines",
+  "brand": "Puma",
+  "size": "Medium",
+  "description": "Gorra Puma Cai Unisex",
+  "image": "1638731904627Gorra-independiente.jpg"
  }
 ]

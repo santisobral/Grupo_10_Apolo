@@ -16,7 +16,7 @@
          </div>
          <div class="control-formulario">
           <label>Descuento:</label>
-          <input type="number" name="discount" class="control">
+          <input type="number" name="discount" class="control" value="<%= product.discount %>">
          </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
              <label>Genero:</label> 
@@ -27,11 +27,17 @@
            </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Categoria:</label> 
-             <select name="category" class="control"> <!--el name es solo para el Backend-->
-              <option value="botines">Botines</option> <!--el value es para q el backend identifique de que se trata-->
-              <option value="remeras">Remeras</option>
-              <option value="pelotas">Pelotas</option> 
-             </select>
+            <p>
+              <select name="category_id" id="" required>
+                  <% categories.forEach(category => { %>
+                  <option value="<%= category.id %>"
+                       <% if (product.category_id == category.id) { %> <%= 'selected' %><% }; %>
+                  >
+                          <%= category.name %></option>
+                  <% }); %>
+              </select>
+          </p>
+            
           </div>
           <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Marca:</label> 
@@ -39,17 +45,25 @@
               <option value="Adidas">Adidas</option> <!--el value es para q el backend identifique de que se trata-->
               <option value="Nike">Nike</option>
               <option value="Puma">Puma</option> 
-              <option value="Reebok">Reebok</option> 
+              <option value="topper">Topper</option> 
+              <option value="under armour">Under Armour</option> 
+              <option value="umbro">Umbro</option> 
+              <option value="kappa">Kappa</option> 
              </select>
           </div>
            <div class="control-formulario"> <!--este campo contiene el menu desplegable-->
             <label>Talle:</label> 
-             <select name="size" class="control"> <!--el name es solo para el Backend-->
-              <option value="Small">S</option> <!--el value es para q el backend identifique de que se trata-->
-              <option value="Medium">M</option>
-              <option value="Large">L</option>
-              <option value="Extra-Large">XL</option>
-             </select>
+            <p>
+              <select name="size_id" id="" required>
+                  <% sizes.forEach(size => { %>
+                  <option value="<%= size.id %>"
+                       <% if (product.size_id == size.id) { %> <%= 'selected' %><% }; %>
+                  >
+                          <%= size.size %></option>
+                  <% }); %>
+              </select>
+          </p>
+            
           </div>
           <div class="control-formulario">
             <label>Descripcion:</label> <!--aca van los comentarios-->

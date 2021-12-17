@@ -25,6 +25,8 @@ const upload = multer({storage});
 router.get("/productList",productController.listaDeProductos);
 // Devolver los productos segun su genero
 router.get("/category/:id/",productController.category);
+// RUta para la barra de busqueda
+router.post("/search/",productController.search);
 // Devolver los productos en oferta
 router.get("/sale/:id/",productController.sale);
 // Devolver los productos en temporada
