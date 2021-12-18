@@ -56,3 +56,18 @@ Hacer menos:
 1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
 Dejar de hacer:
 1 Se dio de baja uno de los participantes sin avisar al grupo
+
+
+Conclusiones sobre el sexto Sprint:
+Continuar haciendo:
+1 Realizamos las acitividades en grupo, lo que hizo que todos entendieramos lo que nos pedia el Sprint
+2 Llegamos mejor con el tiempo de entrega.
+3 Mantener la comunicacion fluida
+Hacer mas:
+1 Reuniones cortas para saber en que estado estan las actividades que vamos realizando.
+Comenzar a hacer:
+2 Resumen de lo visto en las reuniones
+Hacer menos:
+1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
+Dejar de hacer:
+1 Ausentarse a los dailys
