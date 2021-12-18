@@ -70,4 +70,4 @@ Comenzar a hacer:
 Hacer menos:
 1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
 Dejar de hacer:
-1 Ausentarse a los dailys
+1 Ausentarse a los dailys los dias previstos. 
