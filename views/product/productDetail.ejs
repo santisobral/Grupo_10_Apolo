@@ -18,60 +18,45 @@
   <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
   <main>
     <section>
-      
-        <div class="hola">
-          <div class="titulos">
-            <img class="logo-adidas" src="/img/logo-adidas.png">
-            <div>
-              <h1 class="titulo-articulo"><%= product.name %></h1>
-            </div>
-          </div>
-        </div>
         <div class="section-main">
-        <div class="conteiner-img">
-        <div class="imagen-botin">
-          <img class="img-botin-adidas" src="/img/<%= product.image %>">
-        </div>
+          <div class="conteiner-img">
+            <div class="imagen-producto">
+              <img class="img-grande-producto" src="/img/<%= product.image %>">
+            </div>
 
-        <div class="box-box">
-          <img class="img-botines-chicos" src="/img/<%= product.image %>">
-          <img class="img-botines-chicos" src="/img/<%= product.image %>">
-          <img class="img-botines-chicos" src="/img/<%= product.image %>">
-        </div>
-      </div>
+              <div class="box-img-chica-producto">
+                <img class="img-chica-producto" src="/img/<%= product.image %>">
+                <img class="img-chica-producto" src="/img/<%= product.image %>">
+                <img class="img-chica-producto" src="/img/<%= product.image %>">
+              </div>
+          </div>
      
-      <div class="hola2">
-        <h4 class="nombre-producto"><%= product.description %></h4>
-        <div class="box-precio">
-          <p class="precio">$ <%= product.price %></p>
-        </div>
-        <div class="box-tarjeta">
-          <p class="tarjeta">Calcula las cuotas con tu medio de pago<i class="far fa-credit-card"></i> <p class="tarjeta"></p>
-            </p>
-        </div>
-        <div class="detalle-producto">
-          
-           <ul class="navbar">
-            <li>Color : Red/Cloud white</li>
-            <li>Sistema de atado de cordones</li>
-            <li>Exterior de cuero</li>
-            <li>Cuello elastico</li>
-            <li>Suela para terreno firme</li>
-          </ul> 
-          <div>
-            <h2 class="talle"></h2>
-            <div class="talle2">
-              <div class="box-box-lista">
-                <label class="box-lista" class="talle2"><b>Talle</b></label>
-                <p>
-                  <select name="size_id">
-                   <option value="" disabled selected>Elegir Talle</option>
-                   <% sizes.forEach(size => { %>
-                   <option value="<%= size.id %>"><%= size.size %> </option> <!--El id de genres es lo que se guarda cuando se envia el form de crear pelicula y es el dato que 
-                  necesitas que se guarde dado que esta relacionado con la tabla generos-->
-                   <% }) %>
-                  </select>
+          <div class="box-detalle">
+            <div class="box-nombre-producto">
+              <h1 class="nombre-producto"><%= product.name %></h1>
+            </div>
+            <div class="box-precio">
+              <p class="precio">$ <%= product.price %></p>
+            </div>
+            <div class="box-tarjeta">
+              <p class="tarjeta">Calcula las cuotas con tu medio de pago<i class="far fa-credit-card"></i> <p class="tarjeta"></p>
               </p>
+            </div>
+            <div class="detalle-producto">
+              <div class="descripcion-box"> 
+                <h4><%= product.description %></h4>
+              </div>
+              <div class="talle-lista">
+                <label class="box-lista" class="talle2"><b>Talle</b></label>
+                <p class="lista control">
+                    <select name="size_id">
+                     <option value="" disabled selected>Elegir Talle</option>
+                     <% sizes.forEach(size => { %>
+                     <option value="<%= size.id %>"><%= size.size %> </option> <!--El id de genres es lo que se guarda cuando se envia el form de crear pelicula y es el dato que 
+                    necesitas que se guarde dado que esta relacionado con la tabla generos-->
+                     <% }) %>
+                    </select>
+                </p>
               </div>
            
               <a href="/product/productCart">
@@ -80,20 +65,16 @@
                 </button>
               </a>
               <% if ( locals.loggedUser && locals.loggedUser.role_id == 1 ) { %>
-              <div class="edit-delete">
-              <a href="/product/editProduct/<%= product.id %>" class="botton-form">EDITAR PRODUCTO</a>
-						<form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="botton-form">ELIMINAR</button>
-						</form>
-          </div>
-          <% } %>
-            
-           
-
+                <div class="edit-delete">
+                    <a href="/product/editProduct/<%= product.id %>" class="botton-form">EDITAR PRODUCTO</a>
+                            <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                <button type="submit" class="botton-form">ELIMINAR</button>
+                            </form>
+                </div>
+                <% } %>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
     </section>
   </main>
   <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->

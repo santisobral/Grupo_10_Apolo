@@ -127,7 +127,7 @@ body{
 .check{
     display: none;
 }
-}
+
  .botton-form{ /* dandole estilo al boton*/
     background-color:coral;
     border: none;
@@ -148,13 +148,8 @@ body{
         transform: scale(1.5);
     }
 }
-.imagen-botin{
-    height: 475px;
-    width: 450px;
-}
-.img-botin-adidas{
-    width: 100%;
-}
+
+
 .main-navbar{
     display: none
 }
@@ -189,10 +184,76 @@ body{
         display: flex;
     }
 
+    label.box-lista{
+        padding-right: 10px;
+    }
 
 
-/*--------------------------------------------------------------------------*/
-/* FOOTER*/
+    /* MAIN */
+
+    .box-detalle{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .conteiner-img{
+        max-width: 340px;
+    }
+    
+    .img-grande-producto{
+        width: 100%;
+    }
+
+    .box-img-chica-producto{
+        border-top: solid 1px gray;
+    }
+
+    .img-chica-producto{
+        width: 26%;
+        position: relative;
+        left: 10%;
+        padding-left: 1.2%;
+        padding-top: 0%;
+        border: none;
+        padding-right: 1.2%;
+    }
+    
+    .img-chica-producto:hover{
+        width: 26%;
+        position: relative;
+        left: 10%;
+        padding-left: 1.2%;
+        padding-top: 0%;
+        border: solid #EA526F 1px;
+        padding-right: 1.2%;
+    }
+
+    .box-detalle{
+        display: flex;
+        flex-direction: column ;
+        justify-content: center;
+        border-top: solid 2px rgb(202, 202, 202);
+        box-shadow: 1px 1px 1px rgb(202, 202, 202);
+        margin: auto;
+        margin-right: 30px;
+        padding: 20px 0 20px 20px;
+    }
+
+    .tarjeta{
+        color: #2cbf2e;
+    }
+
+    #product-addtocart-button { /*boton de carrito*/
+        background-color: #009946;
+        color: #fff;
+        border-radius: 6px;
+        text-transform: uppercase;
+        border-color: #009946;
+        padding: 11px;
+        margin: 1%;
+    }
+
+    /* FOOTER*/
 .footer{
     background-color:#EA526F;
     padding-top: 10px;
@@ -206,6 +267,9 @@ body{
     border-top:  solid 0.5px whitesmoke;
     display: block; /* si no le pongo este display block no me toma el border-top*/
     margin-top: 15px;
+}
+.footer-login{
+    text-decoration: none;
 }
 .privacity{
     color: white;
@@ -223,10 +287,24 @@ body{
 .bloque{
     display: block;/* como el span es un elemento de linea lo paso a bloque para que me quede uno abajo del otro*/
 }
-
+.sear-bar-bar{
+    display: none;
+}
+.botton-form-login {
+    background-color:#25ced1;
+    border: none;
+    padding: 5px 10px;
+    font-style: oblique;
+    color: #FFFF;
+    border-radius: 5px;
+    margin-right: 5px;
+}
 .buy{
     display: none;
 }
+
+}
+
 
 @media(min-width:768px) {
     .main-header-top{
@@ -306,18 +384,108 @@ body{
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 15px;
     } 
-    .imagen-botin{
-        height: 475px;
-        width: 450px;
+
+    /* MAIN */
+
+    .section-main{
+        margin-top: 50px;
     }
-    .img-botin-adidas{
+
+    .img-grande-producto{
         width: 100%;
-       
         }
+    
+        .section-main{
+            display: flex;
+            justify-content: space-between;
+           
+        }
+        .conteiner-img{
+            display: flex;
+            flex-direction: column;
+            width: 700px; /* aca le doy un ancho fijo al contenedor*/
+            align-items: center;
+            padding:0px 15px 0 15px;
+        }
+        
+    .imagen-producto{
+        display: flex;
+    }
+    .encabezado-producto{
+      
+       display: flex;
+    }
+    
+    .img-grande-producto {
+        padding-left: 1%;
+        object-fit: cover;
+    }
+
+    .box-detalle{
+        display: flex;
+        flex-direction: column ;
+        justify-content: center;
+        border-radius: 5px;
+        border: solid 2px rgb(202, 202, 202);
+        box-shadow: 1px 1px 1px rgb(202, 202, 202);
+        margin: auto;
+        margin-right: 30px;
+        padding: 20px 0 20px 20px;
+    }
+
+    .box-nombre-producto{
+        padding: 10px 0 0 0;
+    }
+
+    .nombre-producto{
+        margin:0;
+    }
+
+    .box-precio{
+        padding: 5px 0 5px 0;
+    }
+
+    .box-tarjeta{
+        padding: 5px 0 5px 0;
+    }
+
+    .tarjeta{
+        text-align: left;
+    }
+
+    .detalle-producto{
+        padding: 10px 20px 10px 0;
+    }
+
+    .descripcion-box {
+        padding-bottom: 5px;
+    }
+    
+    .talle-lista {
+        display: flex;
+        padding: 5px 0 5px 0;
+    }
+
+
+    
+    #product-addtocart-button { /*boton de carrito*/
+        background-color: #009946;
+        color: #fff;
+        border-radius: 6px;
+        text-transform: uppercase;
+        border-color: #009946;
+        padding: 11px;
+        margin: 1%;
+    }
+    
+    /* FOOTER */
     
     .footer{
         background-color:#EA526F;
         padding-top: 20px;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
     }
     .piedepagina{
         display: flex;
@@ -372,11 +540,12 @@ margin:0 10px
 }
 
 }/*--------------------------------------------------------------------------*/
- /* FOOTER */
+ 
    
  
 
 @media(min-width:1024px) {
+
     .lupa{
         display: block;  
         font-size: 20px;
@@ -391,21 +560,13 @@ margin:0 10px
     .main-navbar ul li a { /* agrando el tamano de la letra de la barra de navegacion*/
         font-size: 20px;
 }
-}/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
 /*section*/
-.imagen-principal{
-width: 97%;
+.section-main{
+    margin-top: 80px;
 }
 
-
-.box-box{
-    display: flex;
-    position: relative;
-    left: 1%;
-    padding-top: 0%;
-}
-
-.img-botines-chicos{
+.img-chica-producto{
     width: 26%;
     position: relative;
     left: 10%;
@@ -415,7 +576,7 @@ width: 97%;
     padding-right: 1.2%;
 }
 
-.img-botines-chicos:hover{
+.img-chica-producto:hover{
     width: 26%;
     position: relative;
     left: 10%;
@@ -424,170 +585,29 @@ width: 97%;
     border: solid #EA526F 1px;
     padding-right: 1.2%;
 }
-.logo-adidas{
-    padding-top: 40px;
-    width: 11%;
-    padding-bottom: 2px;
-    padding-left: 5px;
-}
-.titulo-articulo{
-    text-align: center;
-    text-decoration: underline;
-    font-size: 18px;
-    padding-top: 19px;
-    
-}
-.precio{
-    padding-left: 2%;
-    padding-top: 4%;
-    font-size: x-large;
-}
 
-.box-precio{
-    width: 50%;
-}
-
-.box-tarjeta{
-    width: 100%;
-}
-
-.tarjeta:hover{  /*Le puse subrayado al acerdacar el click*/
-    text-align: center;
-    padding-top: 1%;
-    text-decoration: underline;
-    color: #006bb4;
-}
-
-.tarjeta{
-    color: #2cbf2e;
-    text-align: center;
-    padding-top: 1%;
-    text-decoration: none;
-}
-
-i.far.fa-credit-card{
-    padding-left: 2%;
-}
-
-.nombre-producto{
-    padding-top: 4%;
-    padding-left: 1.5%;
-}
-
-.descripcion-producto{
-    text-align: center;
-}
-
-.talle{
-    text-align: center;
-    padding-top: 2%;
-    text-decoration: underline;
-}
-.box-box-lista{
-    padding: 2%
-}
-
-.box-lista{
-    font-size: large;
-}
-
-
-
-
-#product-addtocart-button { /*boton de carrito*/
-    background-color: #009946;
-    color: #fff;
-    border-radius: 6px;
-    text-transform: uppercase;
-    border-color: #009946;
-    padding: 14px 30px;
-
-}
-
-.botom { /*boton de carrito*/
-    text-align: center;
-    padding-bottom: 5px;
-}
-
-@media(min-width:768px){
-    .section-main{
-        display: flex;
-        justify-content: space-between;
-       
-    }
-    .conteiner-img{
-        display: flex;
-        flex-direction: column;
-        width: 700px; /* aca le doy un ancho fijo al contenedor*/
-    }
-    
-.imagen-botin{
-    display: flex;
-}
-.hola{
-  
-   display: flex;
-}
-.imagen-botin-adidas .logo-adidas {
-    display: flex;
-}
-
-.titulos {
-   display: flex;
-   text-align: center;
-   justify-content: space-between;
-}
-
-.img-botin-adidas {
-    padding-left: 1%;
-    
-    object-fit: cover;
-}
-
-.box-box {
-    display: flex;
-    left: 1%;
-}
-
-#product-addtocart-button { /*boton de carrito*/
-    background-color: #009946;
-    color: #fff;
-    border-radius: 6px;
-    text-transform: uppercase;
-    border-color: #009946;
-    padding: 11px;
-    margin: 1%;
-}
-
-}   
-
-@media(min-width:1024px) {
-    .img-botin-adidas {
-        padding-left: 1%;
-        height: 450px;
-        object-fit: cover;
-    }
-    .titulo-articulo {
-        text-align: center;
-        text-decoration: underline;
-        font-size: 26px;
-        padding-top: 36px;
-    }
     .detalle-producto{
         font-size: 20px;
     }
-    .lista{
-        width: 40%;
-        height: 30px;
+   
+    .conteiner-img{
+        width: 750px; /* aca le doy un ancho fijo al contenedor*/
+        margin-left: 150px;
     }
+    .box-detalle{
+        width: 500px;
+        margin-right: 50px;
+    }
+    
+}
+
+@media(min-width:1439px) {
     .conteiner-img{
         
-        width: 750px; /* aca le doy un ancho fijo al contenedor*/
+        margin-left: 300px;
     }
-    .hola2{
-        width: 500px;
-    }
-    .footer{
-        position: relative;/* aca le saco el position fixed*/
+    .box-detalle{
+        
+        margin-right: 200px;
     }
 }
