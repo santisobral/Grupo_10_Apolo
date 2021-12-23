@@ -13,3 +13,10 @@ Sprint 4
 31-10 - Al querer empezar con el Crud nos encontramos con  que las rutas que habiamos definido previamente se chocaban y tuvimos que solucionarlo. Al final de este dia el Crud quedo terminado. 
 06-11 - Nos juntamos para hacer que  el menu hamburguesa sea desplegable. Luego de terminar con esto nos encontramos con que si ingresamos desde la version mobile al product detail las imagenes se rompian, problema que no pudimos solucionar en esta dayli. 
 
+Sprint 6
+4-12 Nos reunimos para organizar el sprint y preparamos el diagrama relacional. 
+11-12 Realizamos la creacion de base de datos e insertamos las tablas a la misma.
+12-12 Configuramos sequelize y creamos los archivos de modelos.
+18-12 Testeamos que el modelo de producto se conectara correctamente desde sequelize a la base de datos y finalizmos el CRUD de productos.
+19-12 Realizamos el CRUD para usuarios.
+23-12 Teminamos el daily y el retro.

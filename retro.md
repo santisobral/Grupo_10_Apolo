@@ -60,13 +60,13 @@ Dejar de hacer:
 
 Conclusiones sobre el sexto Sprint:
 Continuar haciendo:
-1 Realizamos las acitividades en grupo, lo que hizo que todos entendieramos lo que nos pedia el Sprint
+1 Continuar realizando minimo 2 reuniones por semana.
 2 Llegamos mejor con el tiempo de entrega.
-3 Mantener la comunicacion fluida
+3 Mantener la comunicacion fluida.
 Hacer mas:
 1 Reuniones cortas para saber en que estado estan las actividades que vamos realizando.
 Comenzar a hacer:
-2 Resumen de lo visto en las reuniones
+1 Dedicarle mas tiempo a la daily y al retro.
 Hacer menos:
 1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
 Dejar de hacer:
