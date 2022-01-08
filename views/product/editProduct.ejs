@@ -5,10 +5,20 @@
 <body>
     <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 
-    <form action="/product/editProduct/<%= product.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
+    <form action="/product/editProduct/<%= product.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data" id="id-formEdit">
         <div class="control-formulario">
          <label>Nombre del Producto:</label>
-         <input type="text" name="name" placeholder="nombre producto" class="control" value="<%= product.name %> "> <!--el atibuto name es de para una mejor identificacion del Backend-->
+         <input type="text" name="name" placeholder="nombre producto" class="control" id="name" value="<%= product.name %> "
+         class="form-name <%= locals.errors && errors.name ? "is-invalid": null %>"
+         value ="<%= locals.oldData ? oldData.name :null %>">
+         <% if (locals.errors && errors.name){ %> 
+             <div class="text-danger">
+                 <%= errors.name.msg %> 
+             </div>
+             <% } %> <!--el atibuto name es de para una mejor identificacion del Backend-->
+             <div id="div-nameEdit">
+
+             </div>
         </div>
         <div class="control-formulario">
           <label>Precio:</label>
@@ -67,11 +77,28 @@
           </div>
           <div class="control-formulario">
             <label>Descripcion:</label> <!--aca van los comentarios-->
-            <textarea name="description" class="control"><%= product.description %></textarea>
+            <textarea name="description"  class="control <%= locals.errors && errors.description ? "is-invalid": null %>" id
+            = "description">  <%= product.description %><%= locals.oldData ? oldData.description :null %></textarea>
+            <% if (locals.errors && errors.description){ %> 
+              <div class="text-danger">
+                  <%= errors.description.msg %> 
+              </div>
+              <% } %>  
+              <div id="div-description">
+
+              </div>
           </div>
           <div class="control-formulario">
             <label>Foto del Producto:</label>
-            <input type="file" name="editImage" placeholder="IMAGEN" class="control">
+            <input type="file" name="editImage" placeholder="IMAGEN" class="control" id="image">
+            <% if (locals.errors && errors.image){ %> 
+              <div class="text-danger">
+                  <%= errors.image.msg %> 
+              </div>
+              <% } %>
+              <div id="div-image">
+
+              </div>
           </div>
           <div class="control-formulario">
             <div class="radio-button-container" >
@@ -89,7 +116,7 @@
       </form>
 
 
-
+      <script src="/js/validatorEdit.js"></script>
 
     <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 

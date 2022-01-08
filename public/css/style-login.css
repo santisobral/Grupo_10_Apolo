@@ -134,6 +134,9 @@
   background-color:#EA526F;
 
 }
+.text-danger{
+    color: red;
+}
 .nav-menu li a.active, .nav-menu li a:hover{
     color: #25ced1;
     transition: .3s;

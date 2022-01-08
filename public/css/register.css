@@ -278,6 +278,9 @@ font-size: 16px;
 
     padding-left: 10px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .all-icons{
     margin-top: 15px ;
 }

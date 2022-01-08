@@ -3,6 +3,8 @@ var router = express.Router();
 const multer = require("multer");
 
 const loggedMiddleware = require("../middlewares/loggedMiddleware"); // es un middlewares a nivel de ruta
+const createMiddlewares =  require("../middlewares/createMiddlewares");
+const editMiddlewares =  require("../middlewares/editMiddlewares");
 
 
 // ************ Requiero la funcionalidad del controlador ************
@@ -33,7 +35,7 @@ router.get("/sale/:id/",productController.sale);
 router.get("/season/:id/",productController.season);
 
 
-router.post("/productList",upload.single("image"),productController.store);
+router.post("/productList",upload.single("image"),createMiddlewares,productController.store);
 // Crear un producto
 router.get("/createProduct",productController.crearProducto);
 
@@ -41,7 +43,7 @@ router.get("/createProduct",productController.crearProducto);
 router.get("/productdetail/:id",productController.detalle);
 // Editar un producto 
 router.get("/editProduct/:id",productController.editarProducto)
-router.put("/editProduct/:id",upload.single("editImage"),productController.update)
+router.put("/editProduct/:id",upload.single("editImage"),editMiddlewares,productController.update)
 // Eliminar un producto 
 router.delete("/delete/:id",productController.destroy)
 

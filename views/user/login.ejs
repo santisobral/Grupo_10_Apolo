@@ -19,11 +19,25 @@
             <form action="/user/login" method="POST" class="form-login">
                 <div class="usuario">
                     <label for="usuario">Usuario</label>
-                    <input type="email" name="email" id="usuario"  required>
+                    <input type="text" name="email" id="usuario" class ="email"
+                    class="form-name <%= locals.errors && errors.email ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.email :null %>">
+                    <% if (locals.errors && errors.email){ %> 
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                        <% } %> 
                 </div>
                 <div class="pass">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password"  required>
+                    <input type="password" name="password" id="password" class = "password"
+                    class="form-name <%= locals.errors && errors.password ? "is-invalid": null %>"
+                    value ="<%= locals.oldData ? oldData.password :null %>">
+                    <% if (locals.errors && errors.password){ %> 
+                        <div class="text-danger">
+                            <%= errors.password.msg %> 
+                        </div>
+                        <% } %> 
                 </div>
                 <div class="remember">
                         <input type="checkbox" name="rememberMe">
@@ -35,6 +49,7 @@
             <h2 class="register"><a href="register">Registrarse</a></h2>
         </section>
     </main>
+    <script src="/js/validatorLogin.js"></script>
     <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 </body>
 </html>

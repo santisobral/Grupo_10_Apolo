@@ -1,10 +1,9 @@
 const db = require("../database/models");
+const { validationResult } = require("express-validator");
 
 const fs = require("fs");
-const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 
 let productController = {
   carrito: (req, res) => {
@@ -36,27 +35,45 @@ let productController = {
   },
   // ************ (post) Create - Método para guardar la info ************
   store: (req, res) => {
-    db.Product.create({
-      id: req.params.id,
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      brand: req.body.brand,
-      size_id: req.body.size_id,
-      category_id: req.body.category_id,
-      discount: req.body.discount,
-      image: req.file ? req.file.filename : "default-image.jpg",
-      gender: req.body.gender,
-      deleted: 0,
-    })
-      .then(() => {
-        // el then no lleva parametro porque no estas esperando nada de la base de datos x qu estas creando una pelicula
-        res.redirect("/product/productList");
-      })
-      .catch((error) => {
-        console.log(error);
-        res.send("error");
+    const resultValidations = validationResult(req);
+
+    console.log(resultValidations.errors);
+    if (resultValidations.errors.length > 0) {
+      // si es mayor a cero es porque hay errores
+      let promCategories = db.Category.findAll();
+      let promSizes = db.Size.findAll();
+      Promise.all([promCategories, promSizes]).then(([categories, sizes]) => {
+        return res.render("product/createProduct", {
+          categories,
+          sizes,
+          errors: resultValidations.mapped(),
+          oldData: req.body,
+        });
       });
+    } else { // si pasamos las validaciones continuamos con la creacion del producto
+      db.Product.create({
+        id: req.params.id,
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        brand: req.body.brand,
+        size_id: req.body.size_id,
+        category_id: req.body.category_id,
+        discount: req.body.discount,
+        image: req.file ? req.file.filename : "default-image.jpg",
+        gender: req.body.gender,
+        deleted: 0,
+      })
+        .then(() => {
+          // el then no lleva parametro porque no estas esperando nada de la base de datos x qu estas creando una pelicula
+          res.redirect("/product/productList");
+        })
+        .catch((error) => {
+          console.log(error);
+          res.send("error");
+        });
+    }
+   
   },
   // ************ (Get) editar un producto - Método que nos trae la vista del formulario para editar un producto ************
   editarProducto: (req, res) => {
@@ -66,7 +83,7 @@ let productController = {
     });
     let promSizes = db.Size.findAll();
     let promCategories = db.Category.findAll();
-    Promise.all([promEdit, promSizes, promCategories]) // si tengo mas de una promesa y quiero esperar a tener estas 2 promesas, tengo que poner el Peomise.all
+    Promise.all([promEdit, promSizes, promCategories]) // si tengo mas de una promesa y quiero esperar a tener estas 3 promesas, tengo que poner el Peomise.all
       .then(([product, sizes, categories]) => {
         return res.render("product/editProduct", {
           product,
@@ -149,7 +166,32 @@ let productController = {
   },
   // ************ (put) editar - Método para editar la info que se envia desde el Formulario y que se almacenara en la base de datos ************
   update: (req, res) => {
-    db.Product.findByPk(req.params.id)
+    const resultValidations = validationResult(req);
+
+    console.log(resultValidations.errors);
+    if (resultValidations.errors.length > 0) {
+      let productId = req.params.id;
+      let promEdit = db.Product.findByPk(productId, {
+        include: [{ association: "category" }, { association: "size" }],
+      });
+      let promSizes = db.Size.findAll();
+      let promCategories = db.Category.findAll();
+      Promise.all([promEdit, promSizes, promCategories]) // si tengo mas de una promesa y quiero esperar a tener estas 3 promesas, tengo que poner el Peomise.all
+        .then(([product, sizes, categories]) => {
+          return res.render("product/editProduct", {
+            product,
+            sizes,
+            categories,
+            errors: resultValidations.mapped(),
+            oldData: req.body,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+          res.send("error");
+        });
+    } else {
+      db.Product.findByPk(req.params.id)
 
       .then((product) => {
         db.Product.update(
@@ -176,6 +218,8 @@ let productController = {
         // aca se pone el then porque una vez que se actualiza la base de datos recien ahi te va dejar continuar y hacer el redirect
         res.redirect("/product/productList");
       });
+    }
+    
   },
   // ************ (delete)  - Método para eliminar un producto de la base de datos ************
   destroy: (req, res) => {

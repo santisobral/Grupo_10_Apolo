@@ -8,16 +8,23 @@ let usersController = {
     res.render("user/login");
   },
   userProcess: (req, res) => {
+    const resultValidations = validationResult(req);
+    
+    console.log(resultValidations.errors)
+    if (resultValidations.errors.length > 0) {
+      // si es mayor a cero es porque hay errores
+      return res.render("user/login", {
+        errors: resultValidations.mapped(),
+        oldData: req.body,
+      });
+    }
     db.User.findOne({
       where: {
         email: req.body.email,
       },
     }).then((validetEmail) => {
       if (validetEmail) {
-        let isOkThePassword = bcryptjs.compareSync(
-          req.body.password,
-          validetEmail.pass
-        ); // estamos comparando la contraseña que se envia desde el form con la que esta en la db
+        let isOkThePassword = bcryptjs.compareSync(req.body.password,validetEmail.pass); // estamos comparando la contraseña que se envia desde el form con la que esta en la db
         console.log(isOkThePassword);
         console.log(req.body.password);
         if (isOkThePassword) {
@@ -27,9 +34,20 @@ let usersController = {
           }
           return res.redirect("/user/profile");
         }
-      }
-      // caso contrario te manda de nuevo al login
-      res.render("user/login");
+      } // caso contrario aplicas esta validacion
+      return res.render("user/login",{
+        errors:{ 
+          email:{// aca tomo el mismo formato de los errores de express validator
+              msg: "Este email no esta registrado"
+          }
+         },
+         errors:{ 
+          password:{// aca tomo el mismo formato de los errores de express validator
+              msg: "Esta contraseña es incorrecta"
+          }
+         },
+         oldData: req.body 
+      });
     });
   },
   // (get) Create - Formulario para crear un usuario
@@ -53,7 +71,14 @@ let usersController = {
     }).then((validationEmail) => {
       if (validationEmail) {
         // Si los email coincide no te deja avanzar
-        return res.render("user/register");
+        return res.render("user/register",{
+          errors:{ 
+            email:{// aca tomo el mismo formato de los errores de express validator
+                msg: "Este email ya esta registrado"
+            }
+           },
+           oldData: req.body 
+        });
       }
       db.User.create({
         name: req.body.name, // aca vamos a guardar a la info que viene de el form de cracion del usuario. Es un objeto literal con la propiedad y su valor
@@ -65,9 +90,12 @@ let usersController = {
         avatar: req.file.filename,
         deleted: 0,
       });
+      return res.redirect("/user/login"); // si la persona se registro existosamente te lo manda al login
+    })
+    .catch((error) => {
+      console.log(error);
+      res.send("error");
     });
-
-    return res.redirect("/user/login"); // si la persona se registro existosamente te lo manda al login
   },
   // Traemos el formulario de edicion
   edit: (req, res) => {

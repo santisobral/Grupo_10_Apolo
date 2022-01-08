@@ -4,6 +4,7 @@ const multer = require("multer");
 
 let usersController = require("../controller/usersController");
 const validations = require("../middlewares/validatRegisterMiddlewares");
+const validationsLogin = require("../middlewares/validatLoginMiddlewares");
 
 const guestMiddlewares = require("../middlewares/gustMiddlewares"); // es un middlewares a nivel de ruta
 const loggedMiddleware = require("../middlewares/loggedMiddleware"); // es un middlewares a nivel de ruta
@@ -21,7 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 // Devolver el formulario de login 
 router.get("/login",guestMiddlewares,usersController.login);// si ya tenemos al alguien en session se activa el middlewares, caso contrario sigue al controlador
-router.post("/login",usersController.userProcess);
+router.post("/login", validationsLogin,usersController.userProcess);
 
 // Devolver el formulario de register
 router.get("/register",guestMiddlewares ,usersController.register);

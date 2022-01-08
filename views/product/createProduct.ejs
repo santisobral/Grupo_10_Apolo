@@ -5,11 +5,23 @@
 <body>
     <%- include("../partial/header.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
 
-    <form action="/product/productList" method="POST" class="create-form" enctype="multipart/form-data">
-        <div class="control-formulario">
+    <form action="/product/productList" method="POST" class="create-form" enctype="multipart/form-data" id="id-form" >
+  
+        <div class="control-formulario" >
          <label>Nombre del Producto:</label>
-         <input type="text" name="name" placeholder="nombre producto" class="control"> <!--el atibuto name es de para una mejor identificacion del Backend-->
+         <input type="text" name="name" placeholder="nombre producto"  class="control" id="name"
+         <%= locals.errors && errors.name ? "is-invalid": null %>
+         value ="<%= locals.oldData ? oldData.name :null %>">
+         <% if (locals.errors && errors.name){ %> 
+             <div class="text-danger">
+                 <%= errors.name.msg %> 
+             </div>
+             <% } %>  <!--el atibuto name es de para una mejor identificacion del Backend-->
+             <div id="div-name"> <!--lo utilizamos para vaciar  el contenido de html desde javaScript-->
+
+             </div>
         </div>
+      </div>
         <div class="control-formulario">
           <label>Precio:</label>
           <input type="number" name="price" class="control">
@@ -66,11 +78,31 @@
           </div>
           <div class="control-formulario">
             <label>Descripcion:</label> <!--aca van los comentarios-->
-            <textarea name="description" class="control"></textarea>
+            <textarea name="description"  class="control <%= locals.errors && errors.description ? "is-invalid": null %>" id
+              = "description"><%= locals.oldData ? oldData.description :null %></textarea>
+            <% if (locals.errors && errors.description){ %> 
+              <div class="text-danger">
+                  <%= errors.description.msg %> 
+              </div>
+              <% } %>  
+              <div id="div-description">
+
+              </div>
           </div>
+           
+         
+         
           <div class="control-formulario">
             <label>Foto del Producto:</label>
-            <input type="file" name="image" placeholder="IMAGEN" class="control">
+            <input type="file" name="image" placeholder="IMAGEN" class="control" id="image">
+            <% if (locals.errors && errors.image){ %> 
+              <div class="text-danger">
+                  <%= errors.image.msg %> 
+              </div>
+              <% } %> 
+              <div id="div-image"> <!--lo utilizamos para vaciar  el contenido de html desde javaScript-->
+
+              </div>
           </div>
           <div class="control-formulario">
             <div class="radio-button-container" >
@@ -89,8 +121,8 @@
 
 
 
-
+    
     <%- include("../partial/footer.ejs") %> <!--Aca estoy reutilizando codigo gracias a ejs-->
-
+    <script src="/js/validatorCreate.js"></script>
 </body>
 </html>

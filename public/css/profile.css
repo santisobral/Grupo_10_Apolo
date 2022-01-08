@@ -230,6 +230,9 @@ width: 50%;
 
     padding-left: 10px;
 }
+.footer-login{
+    text-decoration: none;
+}
 .all-icons{
     margin-top: 15px ;
 }
