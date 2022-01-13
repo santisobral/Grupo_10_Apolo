@@ -71,3 +71,20 @@ Hacer menos:
 1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
 Dejar de hacer:
 1 Ausentarse a los dailys los dias previstos. 
+
+Conclusiones sobre el septimo Sprint:
+Continuar haciendo:
+1 Continuar realizando minimo 2 reuniones por semana.
+2 Llegamos bien con el tiempo de entrega.
+3 Mantener la comunicacion fluida.
+Hacer mas:
+1 Reuniones cortas para saber en que estado estan las actividades que vamos realizando.
+2 Repasar la pagina y fijarse en detalles.
+3 Hacer mas commit y push.
+4 Practicar utilizar otras ramas y no unicamente la maestra.
+Comenzar a hacer:
+1 Dedicarle mas tiempo a la daily y al retro.
+Hacer menos:
+1 No nos juntamos todos los participantes del grupo los dias que habiamos acordado
+Dejar de hacer:
+1 Ausentarse a los dailys los dias previstos. 

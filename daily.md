@@ -20,3 +20,7 @@ Sprint 6
 18-12 Testeamos que el modelo de producto se conectara correctamente desde sequelize a la base de datos y finalizmos el CRUD de productos.
 19-12 Realizamos el CRUD para usuarios.
 23-12 Teminamos el daily y el retro.
+
+Sprint 7
+23-12 Organziamos el sprit durante la clase de aplicacion practica.
+29-12 
