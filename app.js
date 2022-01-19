@@ -13,6 +13,14 @@ var mainRouter = require('./routes/mainRouter.js'); // aca estoy importando las 
 var productRouter = require('./routes/productRouter');
 var usersRouter = require('./routes/usersRouter');
 
+// ************ ACA ESTOY REQUIRIENDO LA INFORMACION QUE TIENEN LOS ENRRUTADORES DE LA API ************
+var productApiRouter = require ('./routes/api/productApiRouter');
+var userApiRouter = require('./routes/api/userApiRouter')
+
+
+
+
+
 // ************ MIDDLEWARES ************
 // aca genero una ruta estatica que va a consumir los recursos de la carpeta public
 const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta public definida que la voy a usar para acceder a los recursos estaticos dentro de public
@@ -51,6 +59,10 @@ app.use('/', mainRouter);
 app.use('/product', productRouter);
 // Es para la seccion de productos donde la ruta es a partir de user
 app.use('/user', usersRouter);
+
+// ************ PUNTO DE ENTRADA HACIA LAS RUTAS CON API ************
+app.use('/api/product',productApiRouter);
+app.use('/api/user',userApiRouter);
 
 // app.post('/registro', (req,res)=> {
 //     res.redirect('/');
