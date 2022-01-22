@@ -23,8 +23,10 @@ var userApiRouter = require('./routes/api/userApiRouter')
 
 // ************ MIDDLEWARES ************
 // aca genero una ruta estatica que va a consumir los recursos de la carpeta public
-const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta public definida que la voy a usar para acceder a los recursos estaticos dentro de public
-app.use(express.static(publicPath));
+//const publicPath = path.join(__dirname,"./public");// aca ya tengo la ruta public definida que la voy a usar para acceder a los recursos estaticos dentro de public
+//app.use(express.static(publicPath));
+app.use(express.static(path.join(__dirname,'./public')))
+
 // es para poder obtner la info que viaja desde el formulario(req.body)
 app.use(express.urlencoded({ extended: false })); 
 // es para trabajar con la session

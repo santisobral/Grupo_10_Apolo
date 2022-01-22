@@ -25,9 +25,10 @@ let productApiController = {
                 categoriesCount[product.category_id - 1] = categoriesCount[product.category_id - 1] + 1 // le pones el menos uno porque al array arranca de la posicion 0, la parte de la izquierda es la que acumula y se posiciona dentro de lo que le corresponde en el array
             // y cuando estas recorriendo el array en la posicion 0 como product.category es 1 le resta un 1 para estar en la posicion 0 y le sumas 1 para que te cuente 1 elemento en esa posicion
             })
-            let countByCategoryToSend = {};
+            let countByCategoryToSend = [];
             for (let i = 0; i < categoriesNames.length; i++) {
-                countByCategoryToSend[categoriesNames[i]] = categoriesCount[i];
+                //countByCategoryToSend[categoriesNames[i]] = categoriesCount[i];
+                countByCategoryToSend.push(categoriesNames[i] + ':     ' + categoriesCount[i])
             }
            // res.send(products)
             products.forEach(product => {
@@ -52,25 +53,14 @@ let productApiController = {
                 products: products,
                 status: 200
             })
-            // let respuesta = {
-            //     meta: {
-            //         status : 200,
-            //         total: products.length,
-            //         url: 'http://localhost:3030/api/product/'
-            //     },
-            //     data: products
-            // }
-            //     res.json(respuesta);
+           
             })
     },
     'detail': (req, res) => {
         db.Product.findByPk(req.params.id,{
             include: ['category','size']})
             .then(product => {
-                // product.relation = [ // Preguntar como agregar estas relaciones
-                //     "category_id",
-                //     "size_id"
-                // ];
+               
                 let respuesta = {
                     meta: {
                         status: 200,
@@ -78,7 +68,7 @@ let productApiController = {
                     },
                     data:{
                         product, 
-                        imgUrl:"/public/img/" + product.image
+                        imgUrl: 'http://localhost:3030/img/' + product.image
                     } 
                 }
                 res.json(respuesta);
