@@ -23,4 +23,7 @@ Sprint 6
 
 Sprint 7
 23-12 Organziamos el sprit durante la clase de aplicacion practica.
-29-12 
+29-12 Realizamos las validaciones del registro y de los usuarios del back-end. Tambien hicimos parte de la validacion de la creacion y modificacion de productos pero tuvimos algunos problemas.
+03-01 Realizamos las validaciones del front-end de usuarios y registro. y logramos terminas la validacion de creacion y modificacion de productos del back-end.
+08-01 Terminamos con las validaciones del front-end, creacion y modificacion de productos.
+13-01 Realizamos el retro y el daily. 
