@@ -5,17 +5,18 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    padding-top: 10%;/* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
+   /* le doy el relleno que sea superior al tamano del header para que las imagenes del secction no se metan en el header*/
 }
 
 
 /* HEADER*/
 @media (min-width: 320px){
     .header-content{
-        position: fixed;/* aca fijo el header*/
-        top: 0;/* aca le digo al header que quede bien arriba*/
+      position: fixed;
+      margin-top:0px;
+      
         width: 100%;/* aca le digo al contenedor que tome todo el ancho disponible*/
-        z-index: 1;/* es para que el header se posicione por adelante de los demas elementos y se visualice al scroolear*/
+      
     }
     .main-header-top{
         background-color:#25ced1;
@@ -154,8 +155,7 @@ body{
     }
     /*FORMULARIO*/
     .create-form{
-        padding: 60px 15px;
-        background-color:#DCDCDC;
+      
         text-align: center;
     }
     .control-formulario{
